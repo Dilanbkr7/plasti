@@ -1,0 +1,692 @@
+P0 [Ttulo1] DESCRIPCIÓN DEL COMPONENTE DESARROLLADO
+P1 [Texto] En las universidades del Ecuador, realizar las prácticas preprofesionales es un paso obligatorio para que los estudiantes de carreras técnicas de tercer nivel puedan graduarse. Según las normas académicas fijadas a nivel nacional por el CES (Consejo de Educación Superior), todo alumno necesita cumplir como mínimo con 240 horas laborales y 96 horas de ayuda social antes de culminar su carrera [1]. Dentro de la ESFOT (Escuela de Formación de Tecnólogos), en la Escuela Politécnica Nacional, este requisito busca que los jóvenes apliquen en un trabajo real todo lo que vieron en el aula y, a la vez, aporten con soluciones prácticas a la comunidad. Sin embargo, para que estas horas se reconozcan oficialmente, no basta solo con ir a trabajar a la empresa o institución, sino que se debe cumplir con todo un trámite administrativo interno que exige llenar solicitudes, entregar cartas de aceptación, presentar informes cada cierto tiempo y esperar a que los tutores asignados revisen y aprueben los documentos.
+P2 [Texto] A pesar de que este proceso es indispensable para obtener el título, en la ESFOT los estudiantes tienen bastantes inconvenientes para hacer sus trámites con normalidad, sobre todo porque la información está desordenada y los registros se siguen manejando de forma manual. Por un lado, la mayoría no conoce bien los reglamentos ni las fechas máximas de entrega, lo que causa que no sepan qué pasos dar, en dónde descargar los formularios oficiales o cómo llenarlos sin equivocarse. Por otro lado, tampoco existen canales lo suficientemente claros como para saber a qué profesor o correo se deben enviar las solicitudes, ni un medio rápido para revisar cuántas horas llevan aprobadas hasta el momento. Toda esta falta de organización genera demoras largas al momento de revisar los papeles, errores en la secretaría y una gran cantidad de dudas que obligan a los alumnos a buscar asesorías presenciales, quitándole tiempo a los docentes y al personal administrativo. Por culpa de estos retrasos y confusiones con los trámites, muchos estudiantes terminan entregando sus papeles fuera de tiempo, corriendo el riesgo de reprobar la materia de prácticas y atrasar su fecha de graduación [2].
+P3 [Texto] Tomando en cuenta esta situación, este Trabajo de Integración Curricular (TIC) se centra en dar solución a estas dificultades mediante el desarrollo de un sistema que integra un asistente de inteligencia artificial, pensado como una guía interactiva para el seguimiento de las prácticas laborales y comunitarias. La idea principal de este TIC es aprovechar la inteligencia artificial para traducir reglamentos que suelen ser largos y aburridos en instrucciones sencillas, claras y ordenadas paso a paso para el estudiante. En las universidades se ha comprobado que los asistentes virtuales son de gran ayuda para orientar a los alumnos, ya que pueden responder preguntas comunes al instante, recordarles qué requisitos tienen pendientes y guiarlos según la fase del trámite en la que se encuentren [3]. De este modo, este trabajo de titulación busca brindar un acompañamiento constante durante todo el proceso, evitando que los estudiantes cometan errores por falta de información y ayudándoles a completar sus prácticas sin contratiempos.
+P4 [Texto] Para resolver estos problemas de raíz en la ESFOT, en este proyecto se desarrolla el componente backend de la futura plataforma web, manejando la lógica del servidor y sentando las bases para que posteriormente se integre la interfaz de usuario. El sistema organiza el flujo a través de aulas virtuales gestionadas por tres perfiles: administrador, docente y estudiante. El administrador crea cada aula y vincula al tutor y al estudiante según la modalidad correspondiente (prácticas laborales o servicio comunitario). Ambos procesos comparten una lógica unificada de registro, donde el estudiante ingresa sus actividades con hora de entrada y salida en bloques de diez minutos para asegurar un cálculo preciso del tiempo. En prácticas laborales, además, se permite registrar certificados (que tendrán que ser verificados por la Comisión de Prácticas Profesionales) para descontar horas del total exigido. Para el cierre del trámite, el sistema genera directamente en memoria las plantillas finales de culminación en Excel: un formato específico para prácticas laborales y otro compartido para servicio comunitario y convalidaciones. Asimismo, el resumen redactado por inteligencia artificial se guarda en una base de datos para proporcionar la revisión y retroalimentación docente antes de inyectarse en el archivo final. Todo esto se complementa con un asistente virtual, alimentado con la normativa oficial de la ESFOT, que orienta al alumno sobre requisitos previos y pasos a seguir, agilizando la gestión y evitando demoras innecesarias.
+P5 [Ttulo2] Objetivo general
+P6 [Texto] Desarrollar un componente backend para la gestión automatizada de prácticas laborales y servicio comunitario con asistencia de inteligencia artificial en la ESFOT.
+P7 [Ttulo2] Objetivos específicos
+P8 [Texto] Levantar y analizar los requerimientos del sistema y la normativa interna de la ESFOT sobre prácticas y convalidaciones.
+P9 [Texto] Estructurar el backend y el modelo de datos para gestionar usuarios, aulas y actividades sin inconvenientes de desorden ni seguridad.
+P10 [Texto] Implementar la lógica de negocio del backend para gestionar el registro de actividades en aulas virtuales, la persistencia del resumen de IA, la generación de las plantillas finales y la integración del asistente virtual.
+P11 [Texto] Ejecutar pruebas unitarias y de integración sobre los módulos y endpoints para verificar que las funciones cumplan con las reglas de negocio y respondan de forma estable.
+P12 [Texto] Configurar y subir el backend a un entorno en la nube para garantizar que el servidor permanezca activo y disponible cuando se lo consulte.
+P13 [Ttulo2] Alcance
+P14 [Texto] Al momento de construir un producto de software, definir el alcance es un paso fundamental, ya que permite dejar en claro qué funciones se van a desarrollar y cuáles quedan fuera, evitando confusiones, retrasos o sobrecarga de trabajo durante el proceso [4]. Por esta razón, el proyecto se enfoca únicamente en programar y levantar la lógica del servidor, pensada para centralizar y automatizar el seguimiento de prácticas laborales, servicio comunitario y convalidaciones en la ESFOT. Para ello, el sistema organiza los procesos en aulas virtuales según la modalidad requerida, donde el administrador asigna directamente al estudiante y a su docente tutor. Ambos tipos de aula comparten la misma lógica para el registro de actividades diarias, registrando hora de entrada y salida en intervalos de diez minutos para garantizar un cálculo más exacto del tiempo cumplido; en el caso de prácticas laborales, se contempla además el descuento de horas mediante certificados. Al completar las actividades, el sistema genera directamente en la memoria del servidor las plantillas finales de culminación en Excel: un formato específico para prácticas laborales y otro compartido para servicio comunitario y certificados. Además, el resumen generado por la inteligencia artificial se guarda en la base de datos para que los docentes puedan revisarlo y dejar sus comentarios, mientras que el asistente virtual, alimentado con la información oficial de la ESFOT mediante una técnica llamada Generación Aumentada por Recuperación (RAG), guía al estudiante en los requisitos previos y el avance de su trámite.
+P15 [Texto] Para llevar a cabo esta solución, el backend se organiza bajo una Arquitectura Hexagonal con principios de Clean Architecture expuesta mediante una API REST, trabajada con la metodología ágil Scrum para avanzar en entregas ordenadas a lo largo de varios sprints. La solución estructura su código en cuatro capas: Dominio para entidades y reglas centrales, Aplicación mediante Servicios de Aplicación que orquestan el negocio, Infraestructura para repositorios en MongoDB y adaptadores externos, y Presentación para controladores y rutas en Express. La información de usuarios, aulas, actividades y los resúmenes generados por inteligencia artificial se almacenan en MongoDB, con esto se garantiza la trazabilidad y revisión docente, mientras que las plantillas finales de Excel se generan dinámicamente en la memoria RAM del servidor mediante ExcelJS sin guardarse en disco. La seguridad se gestiona mediante tokens JWT y el asistente virtual se conecta a modelos de lenguaje natural alimentados con la normativa oficial de la ESFOT mediante RAG. Finalmente, tras las pruebas unitarias y de integración y con el visto bueno del Product Owner, el backend se desplegará en la nube para asegurar que se pueda acceder en cualquier momento. 
+P16 [Texto] Para que la información se administre de manera ordenada y cada usuario acceda únicamente a las opciones que le corresponden, el backend controla el acceso mediante tres perfiles principales:
+P17 [Texto] Administrador
+P18 [Texto] Iniciar sesión en el sistema mediante credenciales seguras.
+P19 [Texto] Gestionar las cuentas de usuarios con rol de docente y estudiante.
+P20 [Texto] Crear las aulas virtuales y vincular al estudiante con su docente tutor según la modalidad requerida.
+P21 [Texto] Gestionar las plantillas oficiales de culminación para cada modalidad.
+P22 [Texto] Gestionar las fuentes de información institucional de la ESFOT utilizadas por el asistente virtual para orientar sobre normativas y requisitos previos.
+P23 [Texto] Docente
+P24 [Texto] Iniciar sesión mediante credenciales locales o proveedor externo y gestionar su perfil.
+P25 [Texto] Acceder a las aulas virtuales asignadas por el administrador.
+P26 [Texto] Visualizar los registros de actividades, revisar y retroalimentar el resumen generado por IA, y validar las horas de los estudiantes.
+P27 [Texto] Consultar el avance de horas cumplidas y horas pendientes de los estudiantes asignados a sus aulas.
+P28 [Texto] 
+P29 [Texto] Estudiante
+P30 [Texto] Iniciar sesión con credenciales locales o proveedor externo y gestionar su perfil.
+P31 [Texto] Acceder a las aulas virtuales asignadas según la modalidad correspondiente.
+P32 [Texto] Registrar certificados convalidables para el descuento de horas en prácticas laborales.
+P33 [Texto] Registrar en el aula virtual asignada los datos de la entidad receptora para prácticas laborales.
+P34 [Texto] Registrar diariamente sus actividades ingresando hora de entrada y salida en bloques de diez minutos.
+P35 [Texto] Generar el resumen de actividades con asistencia de inteligencia artificial y guardarlo en el sistema.
+P36 [Texto] Descargar la plantilla final de culminación correspondiente a su modalidad con el resumen de actividades integrado.
+P37 [Texto] Consultar al asistente virtual sobre normativas, materias previas y requisitos del proceso.
+P38 [Ttulo2] Marco Teórico
+P39 [] A continuación, se presenta una serie de bases conceptuales que permiten al lector comprender de forma clara y sin complicaciones todos los conceptos técnicos y herramientas que forman parte del desarrollo de este componente backend [5]. De acuerdo con esto, se detallan los conceptos más destacados que intervienen en la solución:
+P40 [Texto] BACKEND
+P41 [Texto] Es la parte interna o el "cerebro" de una aplicación que los usuarios no ven directamente en la pantalla, pero que se encarga de que todo funcione. Su trabajo consiste en recibir las peticiones que llegan desde la página web, procesar la información siguiendo las reglas de la institución, guardar o consultar datos en la base de datos y enviar una respuesta al usuario [6].
+P42 [Texto] 
+P43 [Texto] 
+P44 [Texto] 
+P45 [Texto] API RESTFUL
+P46 [Texto] Es el puente de comunicación que permite a la interfaz web interactuar con el servidor mediante peticiones HTTP estandarizadas, facilitando el intercambio de datos estructurados de forma rápida y ordenada [7].
+P47 [Texto] ARQUITECTURA HEXAGONAL
+P48 [Texto] Es un patrón propuesto por Alistair Cockburn que aísla las reglas del negocio mediante puertos y adaptadores, logrando que el núcleo del sistema funcione sin depender de la base de datos, librerías o frameworks externos [8].
+P49 [Texto] CLEAN ARCHITECTURE
+P50 [Texto] Es una estructura en capas concéntricas planteada por Robert C. Martin con una regla estricta de dependencia: el dominio y los servicios de aplicación están en el centro, mientras que los frameworks y herramientas quedan en el exterior, asegurando un código modular, testeable y mantenible [9].
+P51 [Texto] JAVASCRIPT
+P52 [Texto] Es un lenguaje muy popular en la industria. Aunque empezó pensado para el navegador y la parte visual, hoy en día ha madurado tanto que se usa sin problemas en el servidor para manejar toda la lógica del backend. [10].
+P53 [Texto] NODEJS
+P54 [Texto] Funciona como la plataforma base que hace posible correr código JavaScript directamente en el servidor, sin depender de ningún navegador web. Gracias a esta tecnología, el sistema puede atender a muchos usuarios y peticiones al mismo tiempo de forma rápida y sin consumir demasiados recursos de memoria en la máquina [11].
+P55 [Texto] EXPRESS
+P56 [Texto] Es una herramienta ligera que se instala sobre Node.js para facilitar la construcción del backend sin tener que programar todo desde cero. Su función principal es organizar las rutas de la aplicación como /aulas o /usuarios, ayudando a que el código quede ordenado, fácil de mantener y listo para responder a las consultas de los usuarios [12].
+P57 [Texto] 
+P58 [Texto] 
+P59 [Texto] 
+P60 [Texto] JSON
+P61 [Texto] Es un formato de texto abierto y muy ligero pensado para compartir datos entre aplicaciones por la web. Su gran ventaja es que resulta muy fácil de entender, tanto para las personas como para los programas, gracias a que organiza la información en parejas de clave y valor. [13].
+P62 [Texto] BASE DE DATOS NOSQL (MONGODB)
+P63 [Texto] En lugar de usar el esquema clásico de tablas fijas llenas de filas y columnas, MongoDB organiza los datos en documentos flexibles muy similares a archivos de texto en formato JSON. Esto permite guardar expedientes de prácticas, aulas virtuales y datos de los estudiantes de forma dinámica, adaptándose fácilmente si los requisitos cambian con el tiempo [14].
+P64 [Texto] JSON WEB TOKEN (JWT)
+P65 [Texto] Es un mecanismo de seguridad digital que funciona como una especie de carné o pase virtual. Cuando un usuario inicia sesión correctamente con su usuario y contraseña, el servidor le entrega una clave codificada (token) que el navegador guarda, con esto, el sistema sabe quién es el usuario en cada acción sin tener que pedirle la contraseña a cada rato [15].
+P66 [Texto] ASISTENTE VIRTUAL (CHATBOT)
+P67 [Texto] Es un programa interactivo diseñado para conversar con las personas y brindarles orientación de manera automática las 24 horas del día. En lugar de que el alumno tenga que buscar en reglamentos largos o esperar una cita presencial, el asistente virtual responde preguntas frecuentes al instante y le explica paso a paso qué documento debe entregar según el avance de sus prácticas [3].
+P68 [Texto] MODELOS DE LENGUAJE NATURAL
+P69 [Texto] Son modelos avanzados de inteligencia artificial entrenados para comprender el lenguaje humano tal como las personas lo hablan y lo escriben. Gracias a estos modelos, el sistema puede leer las descripciones de las actividades diarias que registran los estudiantes en sus prácticas y generar automáticamente un resumen claro, coherente y bien redactado para el informe final [16].
+P70 [Texto] 
+P71 [Texto] 
+P72 [Texto] GENERACIÓN AUMENTADA POR RECUPERACIÓN (RAG)
+P73 [Texto] Es una técnica moderna de inteligencia artificial que combina la búsqueda de documentos con modelos de lenguaje. En vez de depender solo de lo que el modelo ya sabe, RAG busca textos específicos en las normas oficiales de la ESFOT y se los pasa como contexto; así se consiguen respuestas precisas, al día y sin inventar información. [17].
+P74 [Texto] GENERACIÓN DE DOCUMENTOS EN MEMORIA
+P75 [Texto] Es una técnica que construye los archivos de Excel directamente en la memoria RAM del servidor e inyecta los datos y el resumen de IA, agilizando la descarga sin almacenar archivos temporales en disco [18].
+P76 [Texto] NOTIFICACIONES POR CORREO (SENDGRID)
+P77 [Texto] Es una plataforma en la nube especializada en el envío seguro y confiable de correos electrónicos mediante una API web. A diferencia de las configuraciones tradicionales que suelen dar problemas de conexión o hacen que los mensajes caigan en la carpeta de correo no deseado, SendGrid garantiza que los correos automáticos del sistema se entreguen de forma inmediata y confiable en la bandeja de entrada [19].
+P78 [Texto] METODOLOGÍA ÁGIL (SCRUM)
+P79 [Texto] Es un marco de trabajo ágil que divide el desarrollo en periodos cortos llamados sprints, usualmente de una o dos semanas. Al final de cada sprint se entrega una parte del software que ya funciona para que el Product Owner la revise, lo que permite adaptarse a los cambios y avanzar de forma ordenada. [20].
+P80 [Ttulo1] METODOLOGÍA
+P81 [Texto] Para entender bien un problema en la práctica no basta con revisar teoría en libros; hay que ir al lugar de los hechos y ver qué está pasando en el día a día. Justamente para eso sirve este método investigativo (estudio de casos), el cual se centra en examinar una situación o problema real dentro de su propio entorno cotidiano [18]. Esta técnica ayuda a recolectar información de varias fuentes como reglamentos, entrevistas o la observación de cómo se hacen los trámites habitualmente, permitiendo entender con claridad por qué pasan las cosas y así proponer soluciones prácticas que de verdad se adapten a la realidad.
+P82 [Texto] Para el desarrollo de este TIC se optó por aplicar dicho método porque ha permitido conocer de primera mano las complicaciones que pasan los estudiantes de la ESFOT cuando intentan hacer sus prácticas laborales y comunitarias. Gracias a esto, se ha podido revisar cómo se manejan los papeles hoy en día, por qué los alumnos se atrasan tanto en entregar los formularios y lo complicado que resulta controlar el cumplimiento de horas en hojas sueltas. Toda esta información ha servido para definir con exactitud qué funciones se debían programar en el backend y cómo el asistente de inteligencia artificial podía orientar a los estudiantes para que no se pierdan en el proceso.
+P83 [Ttulo2] Metodología de Desarrollo 
+P84 [Texto] Hacer un sistema informático va más allá de solo escribir código a ciegas; hace falta organizarse con un plan claro. En sí, aplicar una metodología para desarrollar software funciona como una guía con pasos y buenas prácticas que acompañan al programador desde que nace la idea hasta tener la aplicación lista y corriendo en la web, cubriendo desde el armado de la estructura y la programación hasta las revisiones técnicas necesarias para garantizar que el programa responda a lo que pide el usuario [19].
+P85 [Texto] Antes se acostumbraba a planificar todo el proyecto al inicio y no se mostraba nada hasta el final, lo cual causaba muchos problemas si algo cambiaba en el camino. Para evitar eso nacieron las metodologías ágiles, que proponen trabajar por partes pequeñas que se van entregando y mejorando poco a poco [20]. Su gran ventaja es que permiten adaptarse rápido si surgen cambios en los requerimientos y mantienen una comunicación cercana entre quien programa y quien solicita el sistema.
+P86 [Texto] Dentro de las opciones ágiles, Scrum es la más utilizada porque ayuda a organizar proyectos complejos dividiendo el trabajo en bloques de una o dos semanas llamados sprints. En cada ciclo se eligen unas cuantas tareas, se programan, se prueban y se muestran al responsable para ver si están bien hechas [21]. En este proyecto se ha utilizado Scrum porque ha ayudado a construir el backend de forma ordenada. Así fuimos avanzando con cada parte del sistema: empezamos por el acceso de los usuarios y la administración de sus cuentas, y después pasamos al armado de los cursos virtuales junto con la vinculación de alumnos y tutores, el registro unificado de actividades, la persistencia del resumen de IA y generación en memoria de las plantillas finales, y al final la conexión con el asistente virtual entrenado con la web de la ESFOT. Trabajar de esta manera ha permitido corregir cualquier observación del Scrum Master y Product Owner a tiempo, sin dejar todo acumulado para el último.
+P87 [Texto] 
+P88 [Texto] 
+P89 [Texto] 
+P90 [Ttulo3] Roles
+P91 [Texto] Para que el trabajo en equipo funcione sin desorden ni confusiones, es indispensable que cada persona sepa con claridad qué le toca hacer. En el desarrollo de software, los roles sirven para repartir las responsabilidades de cada quien, logrando que el proyecto avance de forma coordinada y que el sistema se termine bien y a tiempo [22]. En este desarrollo, los roles de Scrum se han organizado de la siguiente manera:
+P92 [Texto] Product Owner
+P93 [Texto] Es la persona que representa los intereses de la institución y se encarga de que el software que se está construyendo realmente sirva para solucionar el problema. Su tarea principal consiste en armar la lista de requerimientos, decidir qué cosas son más urgentes de programar en cada etapa y revisar que cada entrega funcione como se esperaba [23]. En la Tabla 2.1 se indica quién ha cumplido este rol dentro del proyecto.
+P94 [Texto] Scrum Master
+P95 [Texto] Funciona como un guía o facilitador que ayuda a que el equipo trabaje cómodo y aplique bien las prácticas de Scrum. Su trabajo no es mandar como un jefe tradicional, sino estar pendiente de quitar cualquier traba técnica o duda que frene el avance, asegurando que las tareas se completen sin tropiezos [24]. En la Tabla 2.1 se puede ver quién asumió esta labor de guía dentro del equipo.
+P96 [Texto] Development Team
+P97 [Texto] Se encarga de meterle mano al código para aterrizar cada requerimiento en funciones reales que sirvan. Este papel cubre todo el trabajo técnico: modelar las colecciones en MongoDB, programar los controladores y rutas en Node.js con Express, correr las pruebas y dejar montada la API del backend lista para enlazarse más adelante con el frontend [25]. En la Tabla 2.1 se detalla quién estuvo a cargo de este desarrollo.
+P98 [Descripcin] Tabla 2.1 Asignación del equipo Scrum.
+TABLA BLOQUE 99
+RESPONSABILIDAD | PARTICIPANTE
+Product Owner | 
+Scrum Master | Ing. Byron Loarte, MSc.
+Development Team | Sr. Alex Mateo Barba Gavidia
+P100 [] 
+P101 [Ttulo3] Artefactos 
+P102 [Texto] Cuando se trabaja con metodologías ágiles no se puede dejar todo en palabras dichas en reuniones, también hace falta contar con documentos de apoyo que dejen constancia clara de lo que se va a construir. Los artefactos de software son precisamente esos formatos estandarizados que sirven para registrar las necesidades del usuario, organizar el trabajo de cada ciclo y evaluar el avance real del sistema en cualquier momento [26]. Con el fin de planificar el trabajo y darles un orden claro a las funciones del backend, aplicamos los siguientes artefactos:
+P103 [Texto] Recopilación de Requerimientos
+P104 [Texto] Con este artefacto dejamos anotadas y explicadas a fondo todas las funciones y reglas técnicas que el backend debe tener para resolver lo que la institución necesita [27]. Registrar estos requerimientos permite que tanto el estudiante como el tutor estén de acuerdo desde el inicio en el alcance de cada módulo, evitando así confusiones o cambios inesperados durante la programación. En la Tabla 2.2 dejamos como ejemplo el formato de este artefacto; por su parte, todo el inventario de requerimientos que levantamos para el módulo de prácticas quedó registrado en el ANEXO II.
+P105 [Descripcin] Tabla 2.2 Formato Recopilación de Requerimientos.
+TABLA BLOQUE 106
+RECOPILACIÓN DE REQUERIMIENTOS
+TIPO DE SISTEMA | ID - RR | ENUNCIADO DEL ÍTEM
+BACKEND | RR – 004 | A nivel de backend se establecen los siguientes requisitos funcionales para el estudiante: / Acceder al aula virtual asignada. / Interactuar con el asistente virtual para orientación sobre el proceso de registro. / Registrar actividades para prácticas laborales.  / Gestionar reporte de prácticas laborales asistido por IA.  / Registrar información y actividades para prácticas de servicio comunitario.  / Gestionar reporte de servicio comunitario asistido por IA. / Enviar formularios para aprobación y registro.
+P107 [Texto] Historias de Usuario
+P108 [Texto] Este artefacto describe de forma breve y sencilla una función que el sistema debe realizar, pero redactada directamente desde el punto de vista de la persona que la va a usar, ya sea administrador, docente o estudiante [28]. Su ventaja es que explica con palabras simples quién necesita la función, qué desea hacer y qué beneficio práctico obtiene, lo cual ayuda a dividir tareas grandes en partes pequeñas que se pueden programar y probar en pocos días. En la Tabla 2.3 dejamos como muestra el formato que usamos, y si se desea consultar cada una de las historias de usuario que construimos para el backend, todas se encuentran detalladas en el ANEXO II.
+P109 [Descripcin] Tabla 2.3 Formato Historias de usuario
+TABLA BLOQUE 110
+HISTORIA DE USUARIO
+Identificador: HU-002 | Usuario: Administrador
+Nombre de la historia: Como usuario administrador, quiero registrar, consultar, actualizar y gestionar el estado de las cuentas de docentes y estudiantes, para mantener actualizada la información institucional y controlar el acceso al sistema.
+Prioridad en negocio: Alta | Riesgo en desarrollo: Medio
+Iteración asignada: 2
+Responsable (s): Alex Mateo Barba Gavidia
+Descripción: Desde el backend se habilitan las siguientes funciones para el perfil de administrador: / Registrar nuevas cuentas de docentes y estudiantes.  / Listar usuarios con filtros por rol o estado de cuenta.  / Consultar la información detallada de un usuario específico.  / Actualizar información básica del usuario.  / Inactivar o reactivar cuentas según semestre.
+Observación: El backend valida la unicidad del correo institucional y la robustez de las credenciales, aplicando middlewares de seguridad para asegurar que únicamente el rol de administrador pueda gestionar el ciclo de vida de las cuentas.
+P111 [Texto] 
+P112 [Texto] 
+P113 [Texto] 
+P114 [Texto] Product Backlog 
+P115 [Texto] Este artefacto funciona como un inventario general y ordenado donde se reúnen todas las historias de usuario, mejoras y tareas técnicas pendientes de todo el proyecto [29]. La lista se organiza colocando arriba las cosas más urgentes y de mayor valor, siendo administrada de forma continua por el Product Owner para marcar las reglas de qué módulos se deben programar primero en cada etapa. En la Tabla 2.4 se expone el formato diseñado para este artefacto, encontrándose la lista completa y priorizada en el ANEXO II.
+P116 [Descripcin] Tabla 2.4 Formato Product Backlog
+TABLA BLOQUE 117
+PRODUCT BACKLOG
+ID-HU | DESCRIPCIÓN DE LA HISTORIA | ITERACIÓN ASIGNADA | ESTADO | PRIORIDAD
+HU-001 | Gestionar autenticación, perfil y recuperación de contraseña | 1 | Finalizado | Alta
+P118 [Texto] 
+P119 [Texto] Sprint Backlog
+P120 [Texto] Sirve para concentrar el conjunto puntual de historias y actividades técnicas que acordamos programar, probar y entregar funcionando a lo largo de un ciclo o sprint específico [30]. A diferencia del listado general, este artefacto lo maneja únicamente quien programa, dividiendo cada función en pasos prácticos como la creación de rutas, programar la lógica o hacer pruebas y calcular las horas necesarias para completarlas. El cuadro empleado para controlar cada ciclo consta en la Tabla 2.5, dejando el detalle de las iteraciones dentro del ANEXO II.
+P121 [Descripcin] 
+P122 [Descripcin] 
+P123 [Descripcin] 
+P124 [Descripcin] 
+P125 [Descripcin] 
+P126 [Descripcin] 
+P127 [Descripcin] 
+P128 [Descripcin] 
+P129 [Descripcin] 
+P130 [Descripcin] Tabla 2.5 Formato Sprint Backlog
+TABLA BLOQUE 131
+SRINT BACKLOG
+ID-SB | NOMBRE  | MÓDULO | HU | HISTORIA DE USUARIO | TAREAS | TIEMPO ESTIMADO
+SB-000 | Configuración del ambiente de desarrollo | Infraestructura | - | - | Definir los requerimientos iniciales del sistema.  / Diseñar y crear los modelos de la Base de Datos. / Configurar la estructuración del proyecto bajo la arquitectura propuesta. | 10 H
+P132 [] 
+P133 [Ttulo2] Diseño de la arquitectura
+P134 [Texto] Podemos entender la arquitectura de software como el esqueleto técnico de la aplicación, ya que define la manera de estructurar el código fuente, qué reglas seguir para no mezclar responsabilidades y cómo interactúan los componentes del backend [31]. Contar con una buena arquitectura es fundamental porque evita que el proyecto se convierta en un código desordenado e inmanejable con el paso del tiempo, logrando que el sistema sea fácil de mantener, seguro y capaz de crecer sin problemas si a futuro se agregan nuevas funciones.
+P135 [Ttulo3] Arquitectura Hexagonal con Principios de Clean Architecture
+P136 [Texto] Para este proyecto se ha seleccionado una Arquitectura Hexagonal con principios de Clean Architecture implementada sobre una API RESTful. Esta estructura organiza el código del backend en capas concéntricas para que la lógica del negocio no dependa de librerías, bases de datos ni herramientas externas. Su funcionamiento se basa en cuatro niveles: en el núcleo se encuentra la Capa de Dominio, que contiene las entidades y las reglas del negocio; a su alrededor está la Capa de Aplicación, donde cada procedimiento del sistema se organiza en un servicio independiente que orquesta las operaciones sin atarse a tecnologías específicas. Rodeando a estas capas se ubica la Capa de Infraestructura, que contiene los adaptadores necesarios para interactuar con MongoDB, la plataforma de inteligencia artificial y la generación de archivos; y en el exterior se sitúa la Capa de Presentación, encargada de recibir las peticiones web mediante rutas y controladores en Express. Cuando el usuario envía una solicitud, la presentación la delega al servicio correspondiente, este ejecuta el procedimiento aplicando las reglas del dominio y utiliza los adaptadores para persistir datos o consultar servicios externos, devolviendo una respuesta rápida y estructurada [32].
+P137 [Texto] (aquí va la imágen)
+P138 [Descripcin] Figura 2.1 Diagrama de la Arquitectura Hexagonal basada en Clean Architecture
+P139 [Ttulo2] Herramientas de desarrollo
+P140 [Texto] Son aquellos programas y plataformas que apoyan al equipo a lo largo de todo el trabajo técnico, facilitando tareas como escribir código, rastrear cambios, realizar pruebas a los servicios y desplegar la aplicación en la nube de forma ordenada y sin fallas [33]. En la Tabla 2.6 se resumen los programas seleccionados para construir el proyecto junto con la tarea puntual que ha cumplido cada uno:
+P141 [Descripcin] Tabla 2.6 Listado estratégico de herramientas de desarrollo.
+TABLA BLOQUE 142
+HERRAMIENTA | JUSTIFICACIÓN
+Visual Studio Code | Se ha utilizado como el editor principal para escribir, ordenar y depurar todo el código en JavaScript del backend [34].
+Git | Se ha empleado para llevar el control de versiones del proyecto, guardando los cambios de forma segura mediante ramas de trabajo por cada sprint [35].
+GitHub | Se ha usado como repositorio en la nube para respaldar el código del proyecto y facilitar la revisión de avances junto al tutor [36].
+Postman | Se ha utilizado para probar y verificar que cada endpoint del backend, como el inicio de sesión, el registro de actividades y la generación de reportes, responda correctamente [37].
+MongoDB Atlas | Se ha empleado como el servicio en la nube para alojar la base de datos no relacional, guardando los documentos de usuarios, solicitudes y horas de prácticas [38].
+Render | Se ha utilizado como la plataforma en la nube para desplegar el backend y dejar los servicios web disponibles y accesibles a través de un dominio seguro [39].
+Node.js | Se ha usado como el entorno de ejecución en el servidor que permite correr el código JavaScript del backend de forma rápida y eficiente [40].
+Express.js | Se ha empleado como el framework base para estructurar las rutas de la API, controlar los permisos de acceso y manejar las respuestas del servidor [41].
+GroqCloud | Se ha empleado como la plataforma de inferencia en la nube para ejecutar modelos de lenguaje de alta velocidad que potencian el asistente virtual y la generación de resúmenes de actividades [42].
+P143 [Ttulo3] 
+P144 [Ttulo3] Librerías
+P145 [Texto] Las librerías son paquetes de código reutilizable desarrollados y probados por la comunidad que se integran en una aplicación para resolver problemas específicos, como encriptar una clave o generar un archivo de Excel, sin tener que programar todo desde cero. Esto permite ahorrar tiempo valioso y concentrar el esfuerzo plenamente en la lógica del negocio [43]. En la Tabla 2.7 se presentan los paquetes instalados en el servidor, detallando de forma directa la función que ha cumplido cada uno:
+P146 [Descripcin] 
+P147 [Descripcin] 
+P148 [] 
+P149 [] 
+P150 [Descripcin] Tabla 2.7 Selección de librerías y detalle.
+TABLA BLOQUE 151
+Librerías | Descripción
+Mongoose | Se ha utilizado para conectar el backend con MongoDB, definiendo esquemas estrictos para validar los datos antes de guardarlos [44].
+SendGrid | Lo usamos para que el servidor pueda mandar correos automáticos sin fallos, ya sea al momento de avisar al usuario sobre sus credenciales o cuando necesita restablecer su clave de acceso [45].
+JWT | Se ha usado para generar y verificar los tokens digitales que protegen las rutas privadas y controlan el acceso seguro de cada usuario [46].
+dotenv | Se ha utilizado para resguardar variables de entorno privadas, como accesos a la nube, tokens y puertos, en un archivo de configuración separado del código fuente [47].
+bcryptjs | Se ha empleado para cifrar las claves de ingreso de los usuarios mediante algoritmos hash seguros, evitando que se guarden como texto normal en MongoDB [48].
+exceljs | Se ha usado para generar en memoria las plantillas finales de culminación en hojas de cálculo para prácticas laborales, servicio comunitario y convalidación por certificados [49].
+Cors | Se ha empleado como middleware de seguridad para permitir que en el futuro la interfaz web pueda conectarse con el backend sin bloqueos del navegador [50].
+groq-sdk | Se ha utilizado para conectar el backend con la API de Groq y ejecutar modelos de lenguaje natural para el asistente virtual y los resúmenes de actividades [51].
+P152 [] 
+P153 [] 
+P154 [] 
+P155 [Ttulo1] RESULTADOS
+P156 [Texto] En este capítulo mostramos todo lo que se construyó para el backend del sistema. Vamos a ir revisando el trabajo hecho en cada uno de los sprints, desde cómo preparamos el proyecto al inicio hasta las pruebas que corrimos y cómo quedó subida la aplicación en los servidores de la nube. Todo el desarrollo se pensó para resolver las necesidades reales de los estudiantes, docentes y administradores de la ESFOT, sumando además la ayuda de la inteligencia artificial para guiar en los trámites y facilitar el armado de los reportes de prácticas. En las siguientes secciones vamos a repasar cómo trabajamos cada sprint junto con las tareas que fuimos desarrollando en cada ciclo.
+P157 [Texto] 
+P158 [Ttulo3] Sprint 0: Configuración del ambiente de desarrollo 
+P159 [] Antes de empezar a tirar líneas de código en los controladores y rutas, primero tuvimos que dejar listo el terreno de trabajo para trabajar de forma ordenada y no toparnos con tropiezos más adelante. En esta etapa inicial nos centramos en dejar claros los requerimientos, armar la estructura de carpetas del proyecto, planificar las colecciones en MongoDB y configurar los permisos para cada tipo de usuario. Las tareas que trabajamos en este sprint fueron:
+P160 [Prrafodelista] Delimitar las funciones principales de las rutas públicas y protegidas.
+P161 [Prrafodelista] Organizar la estructura de carpetas y módulos del proyecto.
+P162 [Prrafodelista] Diseñar las colecciones y esquemas en MongoDB.
+P163 [Prrafodelista] Establecer los roles y permisos para cada usuario.
+P164 [Texto1] Delimitar las funciones principales de las rutas públicas y protegidas
+P165 [] Creación de endpoints para registro y autenticación
+P166 [] Desarrollamos estos endpoints para asegurar que las personas inicien sesión y accedan a la plataforma con total tranquilidad. Pensando en facilitar el acceso, permitimos que se registren usando correos convencionales o directamente con su cuenta de Google, aplicando validaciones para no repetir datos y guardando las contraseñas totalmente encriptadas.
+P167 [] 
+P168 [] 
+P169 [] 
+P170 [] Creación de endpoints para recuperar la contraseña
+P171 [] Dejamos listo un servicio para que los usuarios que olviden su clave puedan recuperarla sin problemas. El sistema les manda un correo con un token temporal seguro, asegurándose de quién es antes de dejarle guardar una clave nueva.
+P172 [] Creación de endpoints para administrar cuentas y aulas virtuales
+P173 [] Estas rutas permiten que el administrador cree o modifique usuarios docentes y alumnos, además de abrir las aulas virtuales de cada período académico y asignarle su respectivo docente tutor.
+P174 [] Creación de endpoints para el asistente virtual con IA
+P175 [] Programamos rutas para que los estudiantes hagan preguntas sobre cómo hacer sus trámites o qué dice el reglamento de la ESFOT. El backend busca la información en documentos oficiales y usa un modelo de lenguaje para responder de manera clara y directa.
+P176 [] Creación de endpoints para el seguimiento de prácticas laborales y comunitarias
+P177 [] Sirven para que los alumnos suban sus bitácoras con las actividades que van realizando día a día, cuántas horas llevan y sus respaldos, permitiendo que el tutor revise todo en orden cronológico y dé su visto bueno.
+P178 [] Creación de endpoints para generar reportes con IA y aprobar formularios
+P179 [] Estas rutas reúnen todas las tareas aprobadas del estudiante para que la inteligencia artificial ayude a redactar el borrador del informe final, permitiendo además que el tutor emita la aprobación oficial con el total de horas acumuladas.
+P180 [Texto1] Organizar la estructura de carpetas y módulos del proyecto
+P181 [Texto] Para armar el backend elegimos Node.js junto con el framework Express, trabajando dentro de Visual Studio Code. Para no mezclar todo el código en un solo sitio, organizamos el proyecto siguiendo la Arquitectura Hexagonal y los principios de Clean Architecture. Esto nos ayudó a separar la lógica importante del sistema de cosas externas como la base de datos o las conexiones con la IA, logrando que el proyecto sea fácil de mantener y modificar en el futuro. Cómo quedaron distribuidas las carpetas y archivos se puede observar en la Figura 3.1.
+P182 [] 
+P183 [Ttulo3] Figura 3.1 Estructura del proyecto y organización modular.
+P184 [] 
+P185 [Texto1] Diseñar las colecciones y esquemas en MongoDB
+P186 [Texto] Para guardar toda la información del sistema nos fuimos por MongoDB usando Mongoose. Al ser una base de datos documental no relacional, nos da mucha soltura para trabajar con formatos JSON, lo cual vino perfecto para manejar datos que cambian bastante como las bitácoras diarias de los practicantes, los historiales de las aulas y los textos generados por la IA. En la Figura 3.2 dejamos una vista de cómo quedaron distribuidas estas colecciones, mientras que todo el detalle técnico de los esquemas se puede revisar directamente en el ANEXO II.
+P187 [] 
+P188 [Ttulo3] Figura 3.2 Organización y esquemas de colecciones en MongoDB.
+P189 [] 
+P190 [Texto1] Establecer los roles y permisos para cada usuario
+P191 [Texto] En el sistema separamos a los usuarios en tres perfiles: administradores, profesores y estudiantes. Cada uno tiene asignadas tareas y accesos muy puntuales para que la información se mantenga protegida. Para controlar esto, creamos middlewares que verifican el token JWT que viaja en cada petición, impidiendo que alguien entre a secciones que no le corresponden. El mapa de permisos y funciones que tiene cada rol se muestra en la Figura 3.3.
+P192 [] 
+P193 [Ttulo3] Figura 3.3 Distribución de funciones y privilegios según el rol.
+P194 [] 
+P195 [Ttulo3] Sprint 1 - Cuentas Administrador, Docente y Estudiante
+P196 [] En este sprint nos concentramos en todo lo relacionado con el manejo de cuentas, el inicio de sesión y la seguridad para quienes usan la plataforma. Aquí dejamos implementados los flujos necesarios para que las personas puedan ingresar al sistema, cuidar su perfil y recuperar el acceso si olvidan su clave. Las tareas desarrolladas fueron las siguientes:
+P197 [Prrafodelista] Registro y verificación inicial de usuarios.
+P198 [Prrafodelista] Control de autenticación y sesiones de usuario.
+P199 [Prrafodelista] Administración de datos de perfil y credenciales.
+P200 [Prrafodelista] Rehabilitación y recuperación de contraseñas.
+P201 [Prrafodelista] 
+P202 [Texto1] Registro y verificación inicial de usuarios
+P203 [] Este servicio permite que los usuarios creen su cuenta ingresando sus datos básicos. El backend comprueba que el formato del correo sea válido, validando el número de cédula y guardando la contraseña cifrada para que nadie pueda verla. La ejecución completa de esta funcionalidad a nivel de endpoints y validaciones se puede visualizar en el ANEXO II, mientras que el resultado de ejecutar el proceso de registro de nuevos usuarios se muestra en la Figura 3.4 y el resultado del test unitario en la figura se muestra en la Figura 3.5.
+P204 [] 
+P205 [Ttulo3] Figura 3.4 Ejecución del servicio de registro de usuarios en el servidor.
+P206 [] 
+P207 [Ttulo3] Figura 3.5 Resultado de la prueba unitaria para el registro de usuarios.
+P208 [Texto1] Control de autenticación y sesiones de usuario
+P209 [] Aquí se programó la lógica que recibe las credenciales del usuario o la confirmación de Google al iniciar sesión. Cuando el servidor comprueba que los datos son correctos, devuelve un token JWT que el frontend utiliza para saber qué permisos tiene esa persona y permitirle navegar en sus pantallas correspondientes. De igual manera, se dejó armada la función para cerrar sesión y limpiar el acceso. Desde la Figura 3.6 se muestra el proceso de ejecución de esta funcionalidad, en cambio en la Figura 3.7 se presenta el resultado del test unitario, y por último la funcionalidad completa con sus respectivas validaciones se detallan en el ANEXO II.
+P210 [] 
+P211 [Ttulo3] Figura 3.6 Flujo de autenticación y generación de credenciales JWT.
+P212 [] 
+P213 [Ttulo3] Figura 3.7 Validación mediante prueba unitaria del inicio de sesión.
+P214 [Texto1] 
+P215 [Texto1] 
+P216 [Texto1] Administración de datos de perfil y credenciales
+P217 [] Creamos esta ruta para que cualquier usuario que haya iniciado sesión pueda revisar sus datos personales y actualizar cosas como su teléfono o nombres. Asimismo, si desea cambiar su contraseña, el sistema le pide primero que escriba su clave anterior para confirmar su identidad antes de aceptar la nueva. La ejecución completa de esta funcionalidad a nivel de endpoints y validaciones se puede visualizar en el ANEXO II, mientras que el resultado de ejecutar el proceso de actualizar el perfil se muestra en la Figura 3.8 y el resultado del test unitario en la figura se muestra en la Figura 3.9.
+P218 [Ttulo3] Figura 3.8 Proceso de actualización de credenciales y datos de perfil.
+P219 [] 
+P220 [Ttulo3] Figura 3.9 Resultado del test unitario del servicio de perfil de usuario.
+P221 [] 
+P222 [Texto1] Rehabilitación y recuperación de contraseñas
+P223 [] Este endpoint fue diseñado para ayudar a los usuarios que no recuerdan su clave de ingreso. Solo necesitan escribir su correo y el backend se encarga de generar un enlace seguro con un token que dura poco tiempo. Al abrir ese link, el usuario puede colocar una nueva contraseña y recuperar su cuenta sin complicaciones. La ejecución completa de esta funcionalidad a nivel de endpoints y validaciones se puede visualizar en el ANEXO II, mientras que el resultado de ejecutar el proceso de rehabilitar contraseña se muestra en la Figura 3.10 y el resultado del test unitario en la figura se muestra en la Figura 3.11.
+P224 [] 
+P225 [Ttulo3] Figura 3.10 Mecanismo de restablecimiento y reajuste de contraseña.
+P226 [] 
+P227 [Ttulo3] Figura 3.11 Evidencia del test unitario para recuperación de clave.
+P228 [Ttulo3] Sprint 2 - Rol Administrador
+P229 [] En este segundo sprint nos enfocamos en construir las herramientas que necesita el administrador para gestionar la plataforma. Desde este rol se maneja todo el control general del sistema: dar de alta o suspender cuentas de profesores y alumnos, armar las aulas virtuales para cada ciclo y subir los documentos oficiales de la ESFOT que usa la inteligencia artificial para responder dudas. Las tareas que completamos en este sprint fueron las siguientes:
+P230 [Prrafodelista] Administración de cuentas de docentes y estudiantes.
+P231 [Prrafodelista] Creación y parametrización de aulas virtuales.
+P232 [Prrafodelista] Ingesta y gestión de fuentes institucionales para la IA.
+P233 [Texto1] Administración de cuentas de docentes y estudiantes
+P234 [] Creamos un conjunto de rutas para que el administrador pueda registrar docentes, dar de alta alumnos, consultar la lista de usuarios con filtros por estado, y desactivar cuentas si es necesario. El backend se encarga de verificar que los datos personales no choquen con registros previos y actualiza la información en MongoDB en tiempo real. Desde la Figura 3.12 se muestra el proceso de ejecución de esta funcionalidad, en cambio en la Figura 3.13 se presenta el resultado del test unitario, y por último la funcionalidad completa con sus respectivas validaciones se detallan en el ANEXO II.
+P235 [] 
+P236 [Ttulo3] Figura 3.12 Estructura de administración y control de cuentas de usuarios.
+P237 [] 
+P238 [Ttulo3] Figura 3.13 Comprobación por prueba unitaria de la gestión de cuentas.
+P239 [] 
+P240 [Texto1] Creación y parametrización de aulas virtuales
+P241 [] Para que las prácticas tengan un espacio organizado donde revisarse, programamos este endpoint que permite abrir aulas virtuales asociadas a un período lectivo. Aquí el administrador define si el aula es para prácticas laborales o comunitarias, le asigna el docente tutor responsable y matricula a los estudiantes que van a participar, fijando además las fechas topes de entrega. En la Figura 3.14 se ilustra la ejecución práctica de esta función y en la Figura 3.15 se evidencia la prueba unitaria que respalda su lógica, mientras que la especificación técnica y validaciones completas se encuentran detalladas en el ANEXO II.
+P242 [] 
+P243 [Ttulo3] Figura 3.14 Proceso de configuración y apertura de aulas virtuales.
+P244 [] 
+P245 [Ttulo3] Figura 3.15 Resultado del test unitario para el servicio de aulas virtuales.
+P246 [] 
+P247 [Texto1] Ingesta y gestión de fuentes institucionales para la IA
+P248 [] Este servicio fue desarrollado para que el administrador pueda cargar y mantener al día los documentos que alimentan la memoria del asistente inteligente, tales como el reglamento de prácticas preprofesionales, manuales de titulación y formatos de evaluación de la ESFOT. Al subir un archivo, el backend extrae el texto, lo divide en fragmentos ordenados y los indexa para que el modelo de lenguaje pueda encontrar respuestas exactas cuando un alumno consulte. La ejecución completa de esta funcionalidad a nivel de endpoints y validaciones se puede visualizar en el ANEXO II, mientras que el resultado de ejecutar el proceso de ingesta documental institucional se muestra en la Figura 3.16 y el resultado del test unitario en la figura se muestra en la Figura 3.17.
+P249 [] 
+P250 [Ttulo3] Figura 3.16 Gestión de ingesta de documentos normativos para la IA.
+P251 [] 
+P252 [Ttulo3] Figura 3.17 Validación por prueba unitaria del procesamiento de fuentes.
+P253 [Ttulo3] Sprint 3 - Rol Docente
+P254 [] En este tercer sprint desarrollamos los endpoints pensados para los profesores tutores, quienes son los encargados de acompañar a los estudiantes, revisar cómo avanzan en sus prácticas y dar la aprobación definitiva de sus horas. A través de estas rutas, el docente puede entrar a las aulas que tiene asignadas, auditar las bitácoras laborales y de servicio comunitario, y firmar digitalmente las actas finales. Las tareas desarrolladas en esta etapa fueron las siguientes:
+P255 [Prrafodelista] Consulta y acceso al aula virtual docente asignada.
+P256 [Prrafodelista] Revisión y validación de bitácoras de prácticas laborales.
+P257 [Prrafodelista] Supervisión y control de horas de servicio comunitario.
+P258 [Prrafodelista] Cierre formal y emisión de formularios de aprobación.
+P259 [Texto1] Consulta y acceso al aula virtual docente asignada
+P260 [] Programamos este endpoint para que el docente pueda ver únicamente las aulas en las que fue asignado como tutor por el administrador. Al ingresar, el backend le muestra la lista de sus alumnos inscritos junto con un resumen en vivo de cuántas horas lleva completadas cada uno. Para evitar que un profesor mire cursos ajenos, el sistema revisa el identificador y rol dentro del token JWT antes de entregar la información. Desde la Figura 3.18 se muestra el proceso de ejecución de esta funcionalidad, en cambio en la Figura 3.19 se presenta el resultado del test unitario, y por último la funcionalidad completa con sus respectivas validaciones se detallan en el ANEXO II.
+P261 [] 
+P262 [Ttulo3] Figura 3.18 Consulta y visualización del aula por parte del docente tutor.
+P263 [] 
+P264 [Ttulo3] Figura 3.19 Resultado del test unitario sobre el aula asignada al docente.
+P265 [Texto1] Revisión y validación de bitácoras de prácticas laborales
+P266 [] Desarrollamos esta ruta para que el tutor pueda hacer el seguimiento técnico de las labores que el estudiante realiza en las empresas. Desde aquí, el docente revisa cada actividad en orden de fecha, comprobando las horas reportadas y la explicación técnica. Si todo está correcto, aprueba el registro; si hace falta algo, lo rechaza dejando comentarios para que el alumno corrija. En la Figura 3.20 se ilustra la ejecución práctica de esta función y en la Figura 3.21 se evidencia la prueba unitaria que respalda su lógica, mientras que la especificación técnica y validaciones completas se encuentran detalladas en el ANEXO II.
+P267 [] 
+P268 [Ttulo3] Figura 3.20 Flujo de revisión y aprobación de actividades laborales.
+P269 [] 
+P270 [Ttulo3] Figura 3.21 Verificación unitaria del servicio de validación laboral.
+P271 [] 
+P272 [Texto1] Supervisión y control de horas de servicio comunitario
+P273 [] Esta ruta se implementó para fiscalizar las tareas orientadas al beneficio social. El docente tutor utiliza este servicio para verificar que las horas registradas por el estudiante coincidan con el plan de trabajo acordado con la comunidad, revisando las constancias y el impacto de la labor antes de sumar el tiempo al acumulado del alumno. La ejecución completa de esta funcionalidad a nivel de endpoints y validaciones se puede visualizar en el ANEXO II, mientras que el resultado de ejecutar el proceso de supervisión de servicio comunitario se muestra en la Figura 3.22 y el resultado del test unitario en la figura se muestra en la Figura 3.23.
+P274 [] 
+P275 [Ttulo3] Figura 3.22 Control y seguimiento de bitácoras de servicio comunitario.
+P276 [] 
+P277 [Ttulo3] Figura 3.23 Resultado del test unitario para servicio comunitario.
+P278 [] 
+P279 [Texto1] Cierre formal y emisión de formularios de aprobación
+P280 [] Una vez que el estudiante completó todas las horas exigidas y sus informes están en orden, el docente tutor utiliza este endpoint para cerrar formalmente el proceso. El backend hace el conteo total de horas aprobadas, cambia el estado del expediente a convalidado y deja constancia del dictamen favorable en MongoDB, dejando el trámite listo para su archivo institucional en la ESFOT. Desde la Figura 3.24 se muestra el proceso de ejecución de esta funcionalidad, en cambio en la Figura 3.25 se presenta el resultado del test unitario, y por último la funcionalidad completa con sus respectivas validaciones se detallan en el ANEXO II.
+P281 [] 
+P282 [Ttulo3] Figura 3.24 Proceso de emisión y cierre de formularios docentes.
+P283 [] 
+P284 [Ttulo3] Figura 3.25 Validación unitaria de la aprobación final docente.
+P285 [] 
+P286 [Ttulo3] Sprint 4 - Rol Estudiante
+P287 [] En este cuarto sprint construimos todas las funcionalidades para los estudiantes, dándoles las herramientas necesarias para que lleven el control de sus prácticas de principio a fin. Desde aquí, los alumnos pueden entrar a su aula virtual, consultar al asistente de inteligencia artificial para resolver dudas del reglamento, subir sus actividades diarias tanto de prácticas laborales como de servicio comunitario, apoyarse en la IA para generar el borrador de sus informes finales y mandar su expediente completo a revisión. Las tareas que desarrollamos para este rol fueron las siguientes:
+P288 [Prrafodelista] Acceso y visualización del aula virtual para el estudiante.
+P289 [Prrafodelista] Interacción con el asistente inteligente para consultas institucionales.
+P290 [Prrafodelista] Bitácora y registro de actividades de prácticas laborales.
+P291 [Prrafodelista] Elaboración asistida por IA del reporte de prácticas laborales.
+P292 [Prrafodelista] Registro y justificación de horas en servicio comunitario.
+P293 [Prrafodelista] Redacción del informe de servicio comunitario asistida por IA.
+P294 [Prrafodelista] Envío formal de expedientes para revisión y aprobación.
+P295 [Texto1] Acceso y visualización del aula virtual para el estudiante
+P296 [] Con este endpoint el estudiante puede ver la información de su aula activa, conociendo quién es su docente tutor asignado, las fechas de entrega y un cálculo en vivo de cuántas horas lleva acumuladas frente al total que le pide la carrera. El backend verifica su identidad mediante el token JWT para entregarle únicamente los datos de su curso. En la Figura 3.26 se ilustra la ejecución práctica de esta función y en la Figura 3.27 se evidencia la prueba unitaria que respalda su lógica, mientras que la especificación técnica y validaciones completas se encuentran detalladas en el ANEXO II.
+P297 [] 
+P298 [Ttulo3] Figura 3.26 Visualización y consulta del aula virtual para estudiantes.
+P299 [] 
+P300 [Ttulo3] Figura 3.27 Prueba unitaria de consulta del aula por el alumno.
+P301 [] 
+P302 [Texto1] Interacción con el asistente inteligente para consultas institucionales
+P303 [] Programamos este servicio de mensajería para que los alumnos no tengan que esperar una cita o ir presencialmente cuando tengan dudas sobre los trámites. Cuando el estudiante manda una pregunta, el backend busca los fragmentos más relevantes dentro de los reglamentos e instructivos oficiales de la ESFOT previamente cargados, y luego se conecta mediante la API de Groq para responder con un lenguaje natural, directo y apegado a la normativa institucional. La ejecución completa de esta funcionalidad a nivel de endpoints y validaciones se puede visualizar en el ANEXO II, mientras que el resultado de ejecutar el proceso de consulta interactiva con el asistente de IA se muestra en la Figura 3.28 y el resultado del test unitario en la figura se muestra en la Figura 3.29.
+P304 [] 
+P305 [Ttulo3] Figura 3.28 Interacción y procesamiento de consultas mediante IA.
+P306 [] 
+P307 [Ttulo3] Figura 3.29 Resultado del test unitario del asistente interactivo con IA.
+P308 [] 
+P309 [Texto1] Bitácora y registro de actividades de prácticas laborales
+P310 [] Desarrollamos esta ruta para que los estudiantes anoten lo que van haciendo en la empresa o institución donde realizan sus prácticas. El alumno ingresa la fecha, el número de horas trabajadas en el día y una explicación técnica de las labores cumplidas. El backend revisa que no se exceda el tope diario permitido y almacena el registro en MongoDB marcado como pendiente para que el tutor lo califique. Desde la Figura 3.30 se muestra el proceso de ejecución de esta funcionalidad, en cambio en la Figura 3.31 se presenta el resultado del test unitario, y por último la funcionalidad completa con sus respectivas validaciones se detallan en el ANEXO II.
+P311 [] 
+P312 [Ttulo3] Figura 3.30 Registro cronológico de jornadas y bitácora laboral.
+P313 [] 
+P314 [Ttulo3] Figura 3.31 Validación por prueba unitaria del guardado laboral.
+P315 [] 
+P316 [Texto1] Elaboración asistida por IA del reporte de prácticas laborales
+P317 [] Pensando en ahorrarle tiempo al estudiante al momento de armar su informe final, creamos este endpoint asistido por inteligencia artificial. El backend reúne todas las bitácoras que ya fueron aprobadas por el tutor y arma una solicitud estructurada para que el modelo de lenguaje redacte un borrador técnico completo, organizando por labores ejecutadas, problemas solucionados y conclusiones preliminares, el cual el alumno puede revisar y pulir antes de entregarlo. En la Figura 3.32 se ilustra la ejecución práctica de esta función y en la Figura 3.33 se evidencia la prueba unitaria que respalda su lógica, mientras que la especificación técnica y validaciones completas se encuentran detalladas en el ANEXO II.
+P318 [] 
+P319 [Ttulo3] Figura 3.32 Generación asistida con IA del reporte de prácticas laborales.
+P320 [] 
+P321 [Ttulo3] Figura 3.33 Resultado visual del test del servicio de informes laborales con IA.
+P322 [] 
+P323 [Texto1] Registro y justificación de horas en servicio comunitario
+P324 [] Esta ruta permite que los alumnos documenten las jornadas que cumplen en proyectos sociales en beneficio de comunidades o sectores vulnerables. El estudiante detalla a quiénes benefició la actividad, las horas devengadas y la descripción del trabajo realizado. El backend valida los datos y los deja guardados en la base documental para la posterior fiscalización del docente. La ejecución completa de esta funcionalidad a nivel de endpoints y validaciones se puede visualizar en el ANEXO II, mientras que el resultado de ejecutar el proceso de registro de bitácoras comunitarias se muestra en la Figura 3.34 y el resultado del test unitario en la figura se muestra en la Figura 3.35.
+P325 [] 
+P326 [Ttulo3] Figura 3.34 Registro y control de actividades de servicio comunitario.
+P327 [] 
+P328 [Ttulo3] Figura 3.35 Evidencia de la prueba unitaria para bitácoras comunitarias.
+P329 [] 
+P330 [Texto1] Redacción del informe de servicio comunitario asistida por IA
+P331 [] Implementamos este servicio inteligente para redactar el informe final de servicio comunitario. El sistema procesa las tareas sociales convalidadas y le pide a la IA que estructure una memoria descriptiva enfocada en el impacto social conseguido, destacando la población atendida y los aportes hechos por el alumno según el formato institucional de la facultad. Desde la Figura 3.36 se muestra el proceso de ejecución de esta funcionalidad, en cambio en la Figura 3.37 se presenta el resultado del test unitario, y por último la funcionalidad completa con sus respectivas validaciones se detallan en el ANEXO II.
+P332 [] 
+P333 [Ttulo3] Figura 3.36 Construcción asistida con IA del informe de servicio comunitario.
+P334 [] 
+P335 [Ttulo3] Figura 3.37 Verificación mediante test unitario del informe comunitario con IA.
+P336 [] 
+P337 [] 
+P338 [Texto1] Envío formal de expedientes para revisión y aprobación
+P339 [] Cuando el estudiante ya tiene todas sus horas completas y sus informes listos, utiliza este endpoint para mandar formalmente su expediente al docente tutor. Para evitar inconsistencias o alteraciones de última hora, el backend bloquea la edición de las bitácoras y actualiza el estado del trámite a entregado para revisión. De esta forma, el tutor recibe la notificación para proceder con la calificación final. En la Figura 3.38 se ilustra la ejecución práctica de esta función y en la Figura 3.39 se evidencia la prueba unitaria que respalda su lógica, mientras que la especificación técnica y validaciones completas se encuentran detalladas en el ANEXO II.
+P340 [] 
+P341 [Ttulo3] Figura 3.38 Envío y consignación formal de expedientes por el estudiante.
+P342 [] 
+P343 [Ttulo3] Figura 3.39 Prueba unitaria del servicio de envío de formularios.
+P344 [] 
+P345 [Ttulo3] Sprint 5 - Pruebas y Despliegue
+P346 [] En este último sprint nos dedicamos a comprobar que todo lo programado en el backend funcione de forma correcta, soporte tráfico real y cumpla con lo que esperan los usuarios de la facultad [52]. Además, dejamos el proyecto corriendo en un servidor en la nube para garantizar su disponibilidad ininterrumpida en producción. En esta etapa abordamos los siguientes aspectos técnicos:
+P347 [Prrafodelista] Ejecución e interpretación de pruebas unitarias.
+P348 [Prrafodelista] Evaluación de rendimiento bajo pruebas de estrés.
+P349 [Prrafodelista] Validación funcional mediante pruebas de aceptación.
+P350 [Prrafodelista] Puesta en producción y despliegue del sistema.
+P351 [Texto1] Ejecución e interpretación de pruebas unitarias
+P352 [Texto] Las pruebas unitarias sirven para revisar por separado cada pieza de código, como los controladores, middlewares de autenticación o funciones de cálculo de horas, asegurando que cada función haga exactamente lo que debe antes de juntarla con el resto del sistema [52]. Para correr estas pruebas usamos Jest y Supertest, aplicando mocks para simular la base de datos MongoDB y las respuestas de la IA sin depender de servicios externos en cada ejecución. Desde la Figura 3.40 se muestra un fragmento del código utilizado para estas pruebas, en cambio en la Figura 3.41 se presenta el resultado con las suites pasando en verde en la consola, y por último el conjunto completo de casos evaluados se detalla en el anexo 2.
+P353 [Ttulo3] Figura 3.40 Estructura del código de pruebas automatizadas.
+P354 [] 
+P355 [Ttulo3] Figura 3.41 Consola de ejecución exitosa de pruebas unitarias.
+P356 [] 
+P357 [Texto] Al tener todas las pruebas en verde, confirmamos que los endpoints responden bien ante datos correctos y también manejan los errores sin colgar el servidor, lo que hace al backend más confiable si más adelante se agregan nuevas funciones.
+P358 [Texto1] Evaluación de rendimiento bajo pruebas de estrés
+P359 [Texto] Las pruebas de estrés tuvieron por finalidad evaluar el comportamiento y resiliencia del servidor ante escenarios de alta concurrencia, previniendo cuellos de botella en momentos de alta demanda académica [53]. Con la herramienta Artillery se inyectaron flujos sostenidos de peticiones hacia los endpoints más transaccionales, abarcando autenticación, consultas de estado y generación con IA. En la Figura 3.42 se detalla el script YAML empleado para parametrizar las cargas virtuales, mientras que en la Figura 3.43 se resumen los indicadores de rendimiento y tasas de éxito; información gráfica adicional se documenta en el Anexo II.
+P360 [] 
+P361 [Ttulo3] Figura 3.42 Configuración del escenario para pruebas de estrés con Artillery.
+P362 [] 
+P363 [Ttulo3] Figura 3.43 Métricas obtenidas durante la simulación de carga.
+P364 [] 
+P365 [Texto] Las métricas demostraron que el backend responde con tiempos de latencia bajos y sin registrar peticiones fallidas, garantizando una navegación fluida incluso en momentos de alta concurrencia.
+P366 [Texto] 
+P367 [Texto] 
+P368 [Texto1] Validación funcional mediante pruebas de aceptación
+P369 [Texto] El objetivo de estas pruebas fue comprobar que lo que programamos realmente responda y le sirva en la práctica a los estudiantes, a los tutores y al personal de la facultad [54]. Para llevar un registro formal, evaluamos los flujos principales paso a paso, verificando que los resultados coincidan con los criterios acordados. Para ilustrar cómo se revisó cada criterio incluimos la Tabla 3.1 como modelo, y el registro completo con las demás pruebas de aceptación se encuentra detallado en el ANEXO II.
+P370 [Ttulo3] Tabla 3.1 Instrumento de verificación para aceptación de requisitos.
+TABLA BLOQUE 371
+PRUEBA DE ACEPTACIÓN
+Designación (ID): PA-001 | Identificador de Historia de usuario: HU-001
+Nombre: Gestionar autenticación, perfil y recuperación de contraseña.
+Descripción: El usuario envía sus credenciales al endpoint de autenticación para obtener su token de acceso, gestiona su información personal desde el módulo de perfil y puede tramitar el restablecimiento de su clave mediante un token temporal enviado a su correo electrónico.
+Instrucciones de funcionamiento: / Probar los endpoints de creación de cuenta y autenticación usando datos de acceso válidos. / Verificar la generación del token JWT y el acceso a rutas protegidas. / Actualizar datos personales y registrar cambio de contraseña. / Ejecutar el flujo de recuperación de clave mediante token seguro recibido por correo.
+Resultado deseado: / El backend autentica satisfactoriamente al usuario, emite el token con los roles asignados, actualiza los datos en la base de datos MongoDB y tramita la recuperación de contraseña sin inconvenientes.
+Evaluación:Prueba aprobada exitosamente (100%).
+P372 [Texto] 
+P373 [Texto] Los resultados de estas pruebas fueron positivos en su totalidad, comprobando que el sistema resuelve las necesidades operativas de las prácticas preprofesionales dentro de la ESFOT.
+P374 [Texto] 
+P375 [Ttulo3] Puesta en producción y despliegue del sistema
+P376 [] Como paso final, subimos el backend a producción usando Render para no complicarnos con configuraciones manuales de servidores físicos y asegurar que la API esté encendida las 24 horas [55]. Conectamos el repositorio de GitHub con Render para tener despliegue automático ante cada actualización y enlazamos la base de datos alojada en MongoDB Atlas con cifrado SSL.
+P377 [] Para probar y consumir los endpoints públicos y privados del backend desde cualquier cliente web, se utiliza la siguiente URL de producción:
+P378 [] [URL Despliegue]
+P379 [] Asimismo, dejamos publicada la documentación interactiva en Postman para que cualquier desarrollador pueda revisar los parámetros de entrada, encabezados y respuestas de cada ruta [56]:
+P380 [] [URL Postman]
+P381 [] 
+P382 [Ttulo1] REFERENCIAS BIBLIOGRÁFICAS
+P383 [] 
+P384 [] 
+P385 [] 
+P386 [] 
+P387 [] 
+P388 [] 
+P389 [Ttulo1] ANEXOS
+P390 [Texto] A continuación, se presenta cada uno de los Anexos que se ha utilizado para el desarrollo del componente backend, los cuales se encuentran detallados de la siguiente manera:
+P391 [Texto] ANEXO I Resultado del programa anti-plagio Turnitin.
+P392 [Texto] ANEXO II Información extra del componente backend.
+P393 [Texto] ANEXO III Manual de usuario (video).
+P394 [Texto] ANEXO IV Credenciales de acceso y despliegue.
+P395 [] 
+P396 [Ttulo2] ANEXO I
+P397 [Texto] (aquí va el resultado del programa anti-plagio Turnitin)
+P398 [] 
+P399 [Ttulo2] ANEXO II
+P400 [Descripcin] Recopilación de requerimientos
+P401 [Texto] En la Tabla 1 se sintetiza el consolidado de requerimientos técnicos y funcionales determinados para la implementación del sistema.
+P402 [Descripcin] Tabla 1. Recopilación de requerimientos.
+TABLA BLOQUE 403
+RECOPILACIÓN DE REQUERIMIENTOS
+TIPO DE SISTEMA | ID - RR | ENUNCIADO DEL ÍTEM
+BACKEND | RR – 001 | En el backend se requiere que el estudiante, docente y administrador puedan realizar lo siguiente:  / Registrarse.  / Iniciar sesión y cerrar sesión.  / Ver y modificar perfil.  / Recuperar contraseña. 
+ | RR – 002 | A nivel de backend se definen los siguientes requerimientos para el perfil de administrador:  / Gestionar cuentas de docentes y estudiantes.  / Gestionar aulas virtuales. / Gestionar fuentes de información institucional para la IA.
+ | RR – 003 | A nivel de backend se contemplan los siguientes requerimientos para el docente tutor: / Gestionar cuentas de docentes y estudiantes.  / Gestionar aulas virtuales. / Acceder al aula virtual asignada. / Visualizar y validar registros de actividades para prácticas laborales.  / Visualizar y validar registros de actividades para prácticas de servicio comunitario.  / Enviar formularios para aprobación y registro.
+ | RR – 004 | A nivel de backend se establecen los siguientes requisitos funcionales para el estudiante:  / Acceder al aula virtual asignada.  / Interactuar con el asistente virtual para orientación sobre el proceso de registro. / Registrar información y actividades para prácticas laborales. / Registrar certificados externos para prácticas laborales. / Gestionar reporte de prácticas laborales asistido por IA. / Registrar información y actividades para prácticas de servicio comunitario. / Gestionar reporte de servicio comunitario asistido por IA. / Enviar formularios para aprobación y registro.
+P404 [] 
+P405 [] Historias de Usuario
+P406 [Texto] A partir del levantamiento previo se formularon 15 historias de usuario, cuyo detalle pormenorizado se desglosa a lo largo de las Tablas 2 a la 16.
+P407 [Descripcin] Tabla 2 Historia de usuario – Gestionar autenticación, perfil y recuperación de contraseña.
+TABLA BLOQUE 408
+HISTORIA DE USUARIO
+Identificador: HU-001 | Usuario: Administrador, Docente y Estudiante
+Nombre de la historia: Como usuario administrador, docente o estudiante, quiero autenticarme mediante credenciales seguras, consultar mi perfil y recuperar mi contraseña olvidada, para acceder a las funciones de la plataforma de manera protegida y confiable.
+Prioridad en negocio: Alta | Riesgo en desarrollo: Medio
+Iteración asignada: 1
+Responsable (s): Alex Mateo Barba Gavidia
+Descripción: Los servicios del backend facilitan a los usuarios llevar a cabo las siguientes operaciones:  / Iniciar sesión y validar credenciales.  / Generar y verificar token JWT para sesiones activas.  / Consultar y actualizar datos de perfil.  / Solicitar recuperación de contraseña por correo electrónico.  / Restablecer contraseña mediante token temporal seguro.
+Observación: El backend encripta las contraseñas antes de almacenarlas en la base de datos mediante algoritmos hash seguros. Además, las rutas privadas exigen el token JWT en los encabezados HTTP y devuelven códigos de estado acordes a cada operación.
+P409 [] 
+P410 [Descripcin] Tabla 3 Historia de usuario – Gestionar usuarios con rol docente y estudiante.
+TABLA BLOQUE 411
+HISTORIA DE USUARIO
+Identificador: HU-002 | Usuario: Administrador
+Nombre de la historia: Como usuario administrador, quiero registrar, consultar, actualizar y gestionar el estado de las cuentas de docentes y estudiantes, para mantener actualizada la información institucional y controlar el acceso al sistema.
+Prioridad en negocio: Alta | Riesgo en desarrollo: Medio
+Iteración asignada: 2
+Responsable (s): Alex Mateo Barba Gavidia
+Descripción: Los servicios del backend habilitan al administrador a llevar a cabo las siguientes acciones:  / Registrar nuevas cuentas de docentes y estudiantes.  / Listar usuarios con filtros por rol o estado de cuenta.  / Consultar la información detallada de un usuario específico.  / Actualizar información básica del usuario.  / Inactivar o reactivar cuentas según semestre.
+Observación: El backend valida la unicidad del correo institucional y la robustez de las credenciales, aplicando middlewares de seguridad para asegurar que únicamente el rol de administrador pueda gestionar el ciclo de vida de las cuentas.
+P412 [] 
+P413 [Descripcin] Tabla 4 Historia de usuario – Gestionar aulas virtuales.
+TABLA BLOQUE 414
+HISTORIA DE USUARIO
+Identificador: HU-003 | Usuario: Administrador
+Nombre de la historia: Como usuario administrador, quiero crear aulas virtuales y vincular al docente tutor con su estudiante correspondiente, para organizar los espacios donde se realiza el seguimiento de las prácticas laborales y de servicio comunitario.
+Prioridad en negocio: Alta | Riesgo en desarrollo: Medio
+Iteración asignada: 2
+Responsable (s): Alex Mateo Barba Gavidia
+Descripción: Los servicios del backend habilitan al administrador a llevar a cabo las siguientes acciones: / Crear aulas virtuales con identificador genérico y seleccionar modalidad. / Listar y consultar aulas virtuales registradas en el sistema. / Asignar un docente tutor y un estudiante a cada aula virtual correspondiente. / Modificar o reasignar participantes en caso de ser necesario. / Gestionar las plantillas institucionales para el registro
+Observación: El backend valida que tanto el docente como el estudiante existan previamente en la base de datos y no permite duplicar la asignación en el mismo semestre, vinculando la modalidad correspondiente para el control de horas.
+P415 [] 
+P416 [] 
+P417 [] 
+P418 [] 
+P419 [Descripcin] Tabla 5 Historia de usuario – Gestionar fuentes de información institucional para la IA.
+TABLA BLOQUE 420
+HISTORIA DE USUARIO
+Identificador: HU-004 | Usuario: Administrador
+Nombre de la historia: Como usuario administrador, quiero cargar y gestionar la base de conocimiento del chatbot institucional con guías, normativas y FAQs sobre las prácticas laborales y de servicio comunitario, para que los estudiantes obtengan respuestas rápidas y precisas sobre sus procesos.
+Prioridad en negocio: Alta | Riesgo en desarrollo: Medio
+Iteración asignada: 2
+Responsable (s): Alex Mateo Barba Gavidia
+Descripción: Los servicios del backend habilitan al administrador a llevar a cabo las siguientes acciones:  / Alimentar el chatbot con la información extraída de la página web de la ESFOT sobre prácticas laborales y de servicio comunitario. / Cargar guías metodológicas, formatos y preguntas frecuentes. / Actualizar periódicamente las fuentes de conocimiento institucional. / Verificar la consistencia del contenido para asegurar respuestas precisas.
+Observación: El backend valida que los documentos y enlaces institucionales provengan de la página web oficial de la ESFOT antes de indexarlos en la base de conocimiento para optimizar la precisión de las respuestas del modelo de lenguaje.
+P421 [Descripcin] 
+P422 [Descripcin] Tabla 6 Historia de usuario – Acceder al aula virtual asignada [Docente].
+TABLA BLOQUE 423
+HISTORIA DE USUARIO
+Identificador: HU-005 | Usuario: Docente
+Nombre de la historia: Como usuario docente, quiero acceder al aula asignada para revisar, aprobar o rechazar las actividades registradas por los estudiantes, para validar el cumplimiento de sus horas y asegurar el registro oficial de sus prácticas laborales y de servicio comunitario.
+Prioridad en negocio: Alta | Riesgo en desarrollo: Medio
+Iteración asignada: 3
+Responsable (s): Alex Mateo Barba Gavidia
+Descripción: La API backend habilita al docente a realizar las siguientes acciones:  / Listar las aulas virtuales asignadas por el administrador. / Consultar la información detallada del estudiante asignado a cada aula virtual. / Acceder al espacio de revisión y seguimiento de las actividades y horas registradas. / Verificar el estado general del aula virtual y el progreso de cumplimiento de los estudiantes.
+Observación: El backend restringe la consulta para que el docente tutor únicamente pueda visualizar las aulas virtuales y estudiantes que le han sido asignados formalmente por el administrador durante el semestre vigente.
+P424 [] 
+P425 [Descripcin] Tabla 7 Historia de usuario – Visualizar y validar registros de actividades para prácticas laborales [Docente].
+TABLA BLOQUE 426
+HISTORIA DE USUARIO
+Identificador: HU-006 | Usuario: Docente
+Nombre de la historia: Como usuario docente, quiero acceder al aula asignada para revisar, aprobar o rechazar las actividades registradas por los estudiantes, para validar el cumplimiento de sus horas y asegurar el registro oficial de sus prácticas laborales.
+Prioridad en negocio: Alta | Riesgo en desarrollo: Medio
+Iteración asignada: 3
+Responsable (s): Alex Mateo Barba Gavidia
+Descripción: La API backend habilita al docente a realizar las siguientes acciones:  / Visualizar documentos adicionales para validar registros de actividades para prácticas laborales. / Validar el registro de actividades diarias por parte del estudiante. / Validar el registro de actividades por parte del estudiante a través de certificados o cursos. / Descargar el formulario para verificar que toda la información se encuentre correcta.
+Observación: El backend comprueba que cada registro de actividades de prácticas laborales se encuentre dentro del rango válido de horas y permite al docente aprobar, rechazar o emitir observaciones antes de consolidar el avance hacia las 240 horas.
+P427 [] 
+P428 [Descripcin] Tabla 8 Historia de usuario – Visualizar y validar registros de actividades para prácticas de servicio comunitario [Docente].
+TABLA BLOQUE 429
+HISTORIA DE USUARIO
+Identificador: HU-007 | Usuario: Docente
+Nombre de la historia: Como usuario docente, quiero acceder al aula asignada para revisar, aprobar o rechazar las actividades registradas por los estudiantes, para validar el cumplimiento de sus horas y asegurar el registro oficial de sus prácticas de servicio comunitario.
+Prioridad en negocio: Alta | Riesgo en desarrollo: Medio
+Iteración asignada: 3
+Responsable (s): Alex Mateo Barba Gavidia
+Descripción: La API backend habilita al docente a realizar las siguientes acciones:  / Visualizar documentos adicionales para validar registros de actividades para prácticas de servicio comunitario. / Validar el registro de actividades por parte del estudiante. / Descargar el formulario para verificar que toda la información se encuentre correcta. / Registrar observaciones o aprobación respecto a las horas y evidencias presentadas.
+Observación: El backend comprueba que cada registro de actividades de prácticas de servicio comunitario se encuentre dentro del rango válido de horas y permite al docente aprobar, rechazar o emitir observaciones antes de consolidar el avance hacia las 96 horas.
+P430 [] 
+P431 [Descripcin] Tabla 9 Historia de usuario – Enviar formularios para aprobación y registro [Docente].
+TABLA BLOQUE 432
+HISTORIA DE USUARIO
+Identificador: HU-008 | Usuario: Docente
+Nombre de la historia: Como usuario docente, quiero enviar el formulario de prácticas laborales y de servicio comunitario, para que el administrador pueda validarlo y continuar con el proceso de registro institucional en el sistema académico (SAEW).
+Prioridad en negocio: Alta | Riesgo en desarrollo: Medio
+Iteración asignada: 3
+Responsable (s): Alex Mateo Barba Gavidia
+Descripción: La API backend habilita al docente a realizar las siguientes acciones:  / Descargar el formulario para verificar que toda la información se encuentre correcta. / Enviar documento para su aprobación o modificación. / Emitir la aprobación docente para continuar con el trámite institucional / Notificar al administrador para continuar el proceso en el sistema académico (SAEW).
+Observación: El backend verifica que el estudiante haya completado la totalidad de las horas requeridas y cuente con la aprobación docente de todas las actividades antes de permitir la emisión del dictamen y el envío del formulario consolidado.
+P433 [] 
+P434 [Descripcin] Tabla 10 Historia de usuario – Acceder al aula virtual asignada [Estudiante].
+TABLA BLOQUE 435
+HISTORIA DE USUARIO
+Identificador: HU-009 | Usuario: Estudiante
+Nombre de la historia: Como usuario estudiante, quiero acceder al aula asignada para registrar las actividades de mis prácticas laborales y/o de servicio comunitario, para que el docente pueda aprobarlas y continuar con el proceso de registro.
+Prioridad en negocio: Alta | Riesgo en desarrollo: Medio
+Iteración asignada: 4
+Responsable (s): Alex Mateo Barba Gavidia
+Descripción: El componente backend provee rutas para que el estudiante ejecute lo siguiente:  / Listar las aulas virtuales de prácticas laborales y de servicio comunitario asignadas por el administrador. / Consultar los datos del docente tutor asignado a cada aula virtual. / Acceder al aula virtual correspondiente para visualizar los requisitos y estado de su trámite. / Monitorear el total de horas acumuladas y el porcentaje de avance en el proceso.
+Observación: El backend asegura que el estudiante acceda de forma exclusiva a las aulas virtuales donde se encuentra matriculado, mostrando el estado en tiempo real de su tutor asignado y el resumen general de horas registradas.
+P436 [] 
+P437 [Descripcin] 
+P438 [Descripcin] 
+P439 [Descripcin] Tabla 11 Historia de usuario – Interactuar con el asistente virtual para orientación sobre el proceso de registro [Estudiante].
+TABLA BLOQUE 440
+HISTORIA DE USUARIO
+Identificador: HU-010 | Usuario: Estudiante
+Nombre de la historia: Como usuario estudiante, quiero interactuar con el asistente virtual del sistema web para recibir orientación rápida y resolver dudas sobre el proceso de registro de prácticas laborales y de servicio comunitario
+Prioridad en negocio: Alta | Riesgo en desarrollo: Medio
+Iteración asignada: 4
+Responsable (s): Alex Mateo Barba Gavidia
+Descripción: El componente backend provee rutas para que el estudiante ejecute lo siguiente: / Interactuar con el asistente virtual para orientación sobre el proceso de prácticas. / Consultar información oficial sobre requisitos previos como materias y créditos requeridos. / Recibir aclaraciones automáticas sobre la normativa institucional para prácticas laborales y de servicio comunitario. / Obtener orientación sobre el procedimiento de finalización y los canales de entrega institucional.
+Observación: El backend procesa las consultas en lenguaje natural mediante el asistente virtual conectándose a la base de conocimiento de la ESFOT, garantizando respuestas rápidas delimitadas a la normativa y procesos de prácticas.
+P441 [] 
+P442 [Descripcin] 
+P443 [Descripcin] 
+P444 [Descripcin] 
+P445 [Descripcin] 
+P446 [Descripcin] Tabla 12 Historia de usuario – Registrar actividades para prácticas laborales [Estudiante].
+TABLA BLOQUE 447
+HISTORIA DE USUARIO
+Identificador: HU-011 | Usuario: Estudiante
+Nombre de la historia: Como usuario estudiante, quiero registrar las actividades y horas realizadas en mis prácticas laborales adjuntando los respaldos necesarios, para mantener un control oficial de mi avance y facilitar la revisión de mi docente tutor.
+Prioridad en negocio: Alta | Riesgo en desarrollo: Medio
+Iteración asignada: 4
+Responsable (s): Alex Mateo Barba Gavidia
+Descripción: El componente backend provee rutas para que el estudiante ejecute lo siguiente: / Registrar información general de la entidad receptora de prácticas laborales. / Registrar diariamente actividades indicando hora de entrada y hora de salida. / Monitorear el progreso acumulativo de horas sobre el total de 240 horas requeridas. / Registrar certificados para el descuento de horas.
+Observación: El backend valida que el registro de actividades para prácticas laborales cumpla con los bloques de diez minutos, sumando el tiempo cronológico y descontando automáticamente las horas convalidadas mediante certificados hasta alcanzar las 240 horas.
+P448 [] 
+P449 [Descripcin] Tabla 13 Historia de usuario – Gestionar reporte de prácticas laborales asistido por IA [Estudiante].
+TABLA BLOQUE 450
+HISTORIA DE USUARIO
+Identificador: HU-012 | Usuario: Estudiante
+Nombre de la historia: Como usuario estudiante, quiero utilizar un asistente de inteligencia artificial para redactar y estructurar mi reporte de prácticas laborales a partir de las actividades previamente registradas, para optimizar el tiempo de documentación y asegurar que el documento cumpla con la estructura institucional requerida.
+Prioridad en negocio: Alta | Riesgo en desarrollo: Medio
+Iteración asignada: 4
+Responsable (s): Alex Mateo Barba Gavidia
+Descripción: El componente backend provee rutas para que el estudiante ejecute lo siguiente: / Solicitar al servicio de IA la generación del resumen de las actividades laborales. / Almacenar el resumen redactado por la IA en la base de datos para revisión docente. / Descargar en memoria la plantilla final específica para prácticas laborales con el resumen inyectado. / Actualizar la información registrada en caso de existir observaciones por parte del docente tutor.
+Observación: El backend genera el resumen técnico de actividades de prácticas laborales mediante la API de IA, almacena el resultado en la base de datos para su posterior revisión e inyecta la información en memoria sobre la plantilla final de Excel específica para laborales.
+P451 [Descripcin] 
+P452 [Descripcin] Tabla 14 Historia de usuario – Registrar actividades para prácticas de servicio comunitario [Estudiante].
+TABLA BLOQUE 453
+HISTORIA DE USUARIO
+Identificador: HU-013 | Usuario: Estudiante
+Nombre de la historia: Como usuario estudiante, quiero registrar las actividades y horas realizadas en mis prácticas de servicio comunitario adjuntando los respaldos necesarios, para mantener un control oficial de mi avance y facilitar la revisión de mi docente tutor.
+Prioridad en negocio: Alta | Riesgo en desarrollo: Medio
+Iteración asignada: 4
+Responsable (s): Alex Mateo Barba Gavidia
+Descripción: El componente backend provee rutas para que el estudiante ejecute lo siguiente: / Registrar diariamente actividades indicando hora de entrada y hora de salida. / Adjuntar certificados y documentos de respaldo de las actividades comunitarias ejecutadas. / Monitorear el progreso acumulativo de horas sobre el total de 96 horas requeridas. / Consultar el historial de actividades registradas dentro del aula virtual asignada.
+Observación: El backend valida que el registro de actividades para prácticas de servicio comunitario cumpla con los bloques de diez minutos, sumando el tiempo cronológico y controlando el progreso acumulativo hasta alcanzar las 96 horas obligatorias.
+P454 [] 
+P455 [Descripcin] Tabla 15 Historia de usuario – Gestionar reporte de prácticas de servicio comunitario asistido por IA [Estudiante].
+TABLA BLOQUE 456
+HISTORIA DE USUARIO
+Identificador: HU-014 | Usuario: Estudiante
+Nombre de la historia: Como usuario estudiante, quiero utilizar un asistente de inteligencia artificial para redactar y estructurar mi reporte de prácticas de servicio comunitario a partir de las actividades previamente registradas, para optimizar el tiempo de documentación y asegurar que el documento cumpla con la estructura institucional requerida.
+Prioridad en negocio: Alta | Riesgo en desarrollo: Medio
+Iteración asignada: 4
+Responsable (s): Alex Mateo Barba Gavidia
+Descripción: El componente backend provee rutas para que el estudiante ejecute lo siguiente: / Solicitar al servicio de IA la generación del resumen de las actividades comunitarias. / Almacenar el resumen redactado por la IA en la base de datos para revisión docente. / Descargar en memoria la plantilla final para servicio comunitario con el resumen inyectado. / Actualizar la información registrada en caso de existir observaciones por parte del docente tutor.
+Observación: El backend genera el resumen técnico de actividades de prácticas de servicio comunitario mediante la API de IA, almacena el resultado en la base de datos para su posterior revisión e inyecta la información en memoria sobre la plantilla final de Excel compartida para servicio comunitario y certificados.
+P457 [] 
+P458 [Descripcin] Tabla 16 Historia de usuario – Enviar formularios para aprobación y registro [Estudiante].
+TABLA BLOQUE 459
+HISTORIA DE USUARIO
+Identificador: HU-015 | Usuario: Estudiante
+Nombre de la historia: Como usuario estudiante, quiero enviar el formulario de prácticas laborales y de servicio comunitario, para que el docente pueda validarlo y continuar con el proceso de registro institucional.
+Prioridad en negocio: Alta | Riesgo en desarrollo: Medio
+Iteración asignada: 4
+Responsable (s): Alex Mateo Barba Gavidia
+Descripción: El componente backend provee rutas para que el estudiante ejecute lo siguiente:   / Descargar el formulario para verificar que toda la información registrada sea correcta.  / Adjuntar la documentación correspondiente al formulario final.  / Enviar el formulario a través del sistema web al docente para su revisión y validación.  / Monitorear el estado de revisión del formulario y atender posibles observaciones del docente.
+Observación: El backend valida que el formulario consolidado contenga todas las firmas y respaldos adjuntos antes de permitir su envío definitivo al docente tutor, bloqueando modificaciones posteriores mientras se encuentre en estado de revisión.
+P460 [] 
+P461 [] Product Backlog
+P462 [Texto] Cada funcionalidad cuenta con una ponderación estratégica según su aporte operativo; en virtud de ello, la Tabla 17 expone la priorización global del backlog.
+P463 [Descripcin] Tabla 17 Product Backlog.
+TABLA BLOQUE 464
+PRODUCT BACKLOG
+ID-HU | DESCRIPCIÓN DE LA HISTORIA | ITERACIÓN ASIGNADA | ESTADO | PRIORIDAD
+HU-001 | Gestionar autenticación, perfil y recuperación de contraseña | 1 | Finalizado | Alta
+HU-002 | Gestionar cuentas para docentes y estudiantes | 2 | Finalizado | Alta
+HU-003 | Gestionar aulas virtuales | 2 | Finalizado | Alta
+HU-004 | Gestionar fuentes de información institucional para la IA | 2 | Finalizado | Alta
+HU-005 | Acceder al aula virtual asignada | 3 | Finalizado | Alta
+HU-006 | Visualizar y validar registros de actividades para prácticas laborales | 3 | Finalizado | Media
+HU-007 | Visualizar y validar registros de actividades para prácticas de servicio comunitario | 3 | Finalizado | Alta
+HU-008 | Enviar formularios para aprobación y registro | 3 | Finalizado | Alta
+HU-009 | Acceder al aula virtual asignada | 4 | Finalizado | Alta
+HU-010 | Interactuar con el asistente virtual para orientación sobre el proceso de registro | 4 | Finalizado | Alta
+HU-011 | Registrar actividades para prácticas laborales | 4 | Finalizado | Media
+HU-012 | Gestionar reporte de prácticas laborales asistido por IA | 4 | Finalizado | Media
+HU-013 | Registrar actividades para prácticas de servicio comunitario | 4 | Finalizado | Media
+HU-014 | Gestionar reporte de prácticas de servicio comunitario asistido por IA | 4 | Finalizado | Media
+HU-015 | Enviar formularios para aprobación y registro | 4 | Finalizado | Media
+P465 [] 
+P466 [] 
+P467 [] Sprint Backlog
+P468 [] El ciclo constructivo de la plataforma se articuló en 6 iteraciones de desarrollo, comprendidas entre el Sprint 0 y el Sprint 5, expuestas en la Tabla 18.
+P469 [Descripcin] Tabla 18. Sprint Backlog
+TABLA BLOQUE 470
+SRINT BACKLOG
+ID-SB | NOMBRE  | MÓDULO | HU | HISTORIA DE USUARIO | TAREAS | TIEMPO ESTIMADO
+SB-000 | Configuración del ambiente de desarrollo | Infraestructura | N/A | N/A | Definir los requerimientos iniciales del sistema.  / Diseñar y crear los modelos de la Base de Datos. / Configurar la estructura del proyecto bajo la arquitectura propuesta. | 10 H
+SB-001 | Autenticación y perfil de usuario | Autenticación | HU-001 | Gestionar autenticación, perfil y recuperación de contraseña | Desarrollar la lógica de autenticación con JWT y bcryptjs, la gestión del perfil y la recuperación de contraseña por correo. | 30 H
+SB-002 | Gestión de cuentas de usuario | Administración | HU-002 | Gestionar cuentas para docentes y estudiantes | Desarrollar las funciones para registrar, listar con filtros, editar y cambiar el estado de cuentas de docentes y estudiantes. | 40 H
+ | Gestión de aulas virtuales | Aulas | HU-003 | Gestionar aulas virtuales | Implementar la creación de aulas virtuales para laborales o servicio comunitario, asignando al docente tutor y al estudiante. | 
+ | Alimentación del chatbot con IA | Chatbot | HU-004 | Gestionar fuentes de información institucional para la IA | Implementar la carga e indexación de la información de la web de la ESFOT para alimentar la base de conocimiento del chatbot. | 
+SB-003 | Acceso al aula para docentes | Docente | HU-005 | Acceder al aula virtual asignada | Desarrollar la funcionalidad que permita al docente acceder a sus aulas virtuales asignadas y revisar la información de sus estudiantes. | 40 H
+ | Revisión de prácticas laborales | Validación | HU-006 | Visualizar y validar registros de actividades para prácticas laborales | Desarrollar la lógica para revisar y validar las actividades diarias y certificados de prácticas laborales hasta completar 240 horas. | 
+ | Revisión de servicio comunitario | Validación | HU-007 | Visualizar y validar registros de actividades para prácticas de servicio comunitario | Desarrollar la lógica para revisar y validar las actividades diarias y certificados de servicio comunitario hasta completar 96 horas. | 
+ | Envío y validación de formularios | Reportes | HU-008 | Enviar formularios para aprobación y registro | Implementar la descarga del formulario final, emisión del dictamen docente y notificación para el registro en el SAEW. | 
+P471 [] 
+TABLA BLOQUE 472
+SB-004 | Acceso al aula para estudiante | Estudiante | HU-009 | Acceder al aula virtual asignada | Desarrollar la funcionalidad que permita al estudiante ingresar a su aula virtual asignada y consultar su avance de horas. | 50 H
+ | Consultas con el asistente virtual | Chatbot | HU-010 | Interactuar con el asistente virtual para orientación sobre el proceso de registro | Implementar la interacción con el chatbot de IA para resolver dudas sobre requisitos, materias y normativas de la ESFOT. | 
+ | Registro de actividades laborales | Actividades | HU-011 | Registrar actividades para prácticas laborales | Desarrollar el registro de actividades diarias en bloques de diez minutos y convalidación por certificados hasta completar 240 horas. | 
+ | Resumen con IA de prácticas laborales | Reportes | HU-012 | Gestionar reporte de prácticas laborales asistido por IA | Implementar la generación del resumen técnico con IA y la creación en memoria de la plantilla final para laborales. | 
+ | Registro de servicio comunitario | Actividades | HU-013 | Registrar actividades para prácticas de servicio comunitario | Desarrollar el registro de actividades comunitarias en bloques de diez minutos y adjuntar certificados hasta completar 96 horas. | 
+ | Resumen con IA de servicio comunitario | Reportes | HU-014 | Gestionar reporte de prácticas de servicio comunitario asistido por IA | Implementar la generación del resumen técnico con IA y la creación en memoria de la plantilla final compartida. | 
+ | Envío de formularios del estudiante | Estudiante | HU-015 | Enviar formularios para aprobación y registro | Implementar la descarga del formulario consolidado, adjuntar las firmas y enviarlo a revisión del docente tutor. | 
+SB-005 | Pruebas | Desarrollar pruebas unitarias de los servicios y adaptadores.  / Ejecutar pruebas de estrés y rendimiento.  / Realizar pruebas de aceptación con el Product Owner. | 22 H
+ | Despliegue | Configurar y realizar el despliegue del backend en la nube. | 8 H
+Documentación | Elaborar el documento final del Trabajo de Integración Curricular y sus anexos. | 40 H
+ |  |  | TOTAL |  |  | 240 H
+P473 [] 
+P474 [] 
+P475 [] ANEXO III
+P476 [Texto] Manual de usuario (video).
+P477 [] 
+P478 [Ttulo2] ANEXO IV
+P479 [Texto] Credenciales de acceso y despliegue.

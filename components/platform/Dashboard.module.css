@@ -1,0 +1,161 @@
+.shell {
+  background: #f6f6f0;
+}
+.header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  min-height: 72px;
+  padding: 12px max(24px, calc((100% - 1160px) / 2));
+  border-bottom: 1px solid var(--p-line);
+  background: #fdfdf9;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--p-green);
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+.brand svg {
+  width: 26px;
+  height: 26px;
+}
+.identity {
+  margin-left: auto;
+  font-size: 12px;
+}
+.identity small {
+  display: block;
+  font-size: 10px;
+  color: var(--p-muted);
+  margin-top: 3px;
+}
+.account {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  white-space: nowrap;
+}
+.account :is(a, button) {
+  color: var(--p-green);
+  font-size: 12px;
+  padding: 7px 0;
+}
+.account :is(a, button):hover {
+  text-decoration: underline;
+}
+.main {
+  max-width: 1208px;
+  padding: 0 24px 36px;
+  margin: auto;
+}
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid var(--p-line);
+}
+.tabs {
+  display: flex;
+  gap: 24px;
+  min-width: 0;
+}
+.tabs button {
+  background: none;
+  border-bottom: 2px solid transparent;
+  padding: 19px 0 16px;
+  color: #727d69;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.tabs .active {
+  color: var(--p-ink);
+  border-color: var(--p-green);
+}
+.tools {
+  position: relative;
+  font-size: 12px;
+  color: var(--p-green);
+}
+.tools summary {
+  cursor: pointer;
+  padding: 10px 0;
+}
+.tools > div {
+  position: absolute;
+  right: 0;
+  z-index: 5;
+  width: max-content;
+  padding: 5px;
+  border: 1px solid var(--p-line);
+  border-radius: 6px;
+  background: #fff;
+}
+.tools button {
+  display: block;
+  width: 100%;
+  padding: 9px 12px;
+  text-align: left;
+}
+.tools button:hover,
+.tools button[aria-current="page"] {
+  background: #edf2e5;
+}
+.heading {
+  padding: 25px 0 22px;
+}
+.shell .heading h1 {
+  font-size: 26px;
+  margin: 0 0 7px;
+  letter-spacing: -0.8px;
+}
+.heading p {
+  color: var(--p-muted);
+  font-size: 12px;
+  margin: 0;
+}
+.shell :is(button, a, summary):focus-visible {
+  outline: 2px solid #607d4d;
+  outline-offset: 4px;
+}
+@media (max-width: 640px) {
+  .header {
+    gap: 12px;
+    padding: 9px 16px;
+    min-height: 54px;
+  }
+  .brand {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+  }
+  .identity {
+    display: none;
+  }
+  .account {
+    margin-left: auto;
+  }
+  .store {
+    display: none;
+  }
+  .main {
+    padding: 0 16px 24px;
+  }
+  .tabs {
+    gap: 16px;
+  }
+  .tabs button {
+    padding: 17px 0 14px;
+  }
+  .heading {
+    padding: 22px 0 18px;
+  }
+  .shell .heading h1 {
+    font-size: 23px;
+  }
+  .heading p {
+    font-size: 11px;
+  }
+}

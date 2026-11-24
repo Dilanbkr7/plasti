@@ -1,0 +1,209 @@
+{
+  "generated": "2026-10-27T00:14:26.867Z",
+  "models": [
+    {
+      "slug": "semiesferica",
+      "product_id": "3cc67eb1-e5b8-4fc8-9d4f-100000000001",
+      "model_url": "/models/coleccion/semiesferica.glb",
+      "originalBytes": 66559292,
+      "optimizedBytes": 1470764,
+      "originalTriangles": 1902128,
+      "optimizedTriangles": 330898,
+      "originalBounds": {
+        "min": [
+          -0.4899597764015198,
+          0,
+          -0.4900208115577698
+        ],
+        "max": [
+          0.4899902939796448,
+          0.385650634765625,
+          0.4898987412452698
+        ]
+      },
+      "optimizedBounds": {
+        "min": [
+          -0.4899292588233948,
+          0.0000152587890625,
+          -0.4900208115577698
+        ],
+        "max": [
+          0.4899597764015198,
+          0.3856188952922821,
+          0.4898682236671448
+        ]
+      },
+      "compression": "Draco + WebP 1024"
+    },
+    {
+      "slug": "conica",
+      "product_id": "3cc67eb1-e5b8-4fc8-9d4f-100000000002",
+      "model_url": "/models/coleccion/conica.glb",
+      "originalBytes": 8491184,
+      "optimizedBytes": 389528,
+      "originalTriangles": 232082,
+      "optimizedTriangles": 65000,
+      "originalBounds": {
+        "min": [
+          -0.4901428818702698,
+          0,
+          -0.4885254502296448
+        ],
+        "max": [
+          0.4902344346046448,
+          0.9017333984375,
+          0.4885559678077698
+        ]
+      },
+      "optimizedBounds": {
+        "min": [
+          -0.4901123642921448,
+          0,
+          -0.4884338974952698
+        ],
+        "max": [
+          0.4901733994483948,
+          0.901721715927124,
+          0.48856091499328613
+        ]
+      },
+      "compression": "Draco + WebP 1024"
+    },
+    {
+      "slug": "hexagonal",
+      "product_id": "3cc67eb1-e5b8-4fc8-9d4f-100000000003",
+      "model_url": "/models/coleccion/hexagonal.glb",
+      "originalBytes": 8103168,
+      "optimizedBytes": 340176,
+      "originalTriangles": 213436,
+      "optimizedTriangles": 64998,
+      "originalBounds": {
+        "min": [
+          -0.4114075005054474,
+          0,
+          -0.4075623154640198
+        ],
+        "max": [
+          0.41134652495384216,
+          0.983978271484375,
+          0.4079285264015198
+        ]
+      },
+      "optimizedBounds": {
+        "min": [
+          -0.4113769829273224,
+          0,
+          -0.4075623154640198
+        ],
+        "max": [
+          0.4113211929798126,
+          0.98388671875,
+          0.40768903493881226
+        ]
+      },
+      "compression": "Draco + WebP 1024"
+    },
+    {
+      "slug": "esferica",
+      "product_id": "3cc67eb1-e5b8-4fc8-9d4f-100000000004",
+      "model_url": "/models/coleccion/esferica.glb",
+      "originalBytes": 7604612,
+      "optimizedBytes": 306816,
+      "originalTriangles": 221896,
+      "optimizedTriangles": 64998,
+      "originalBounds": {
+        "min": [
+          -0.4898377060890198,
+          0,
+          -0.4895935654640198
+        ],
+        "max": [
+          0.4897766709327698,
+          0.831451416015625,
+          0.4895935654640198
+        ]
+      },
+      "optimizedBounds": {
+        "min": [
+          -0.4897156357765198,
+          0,
+          -0.4895020127296448
+        ],
+        "max": [
+          0.4897766709327698,
+          0.8314594030380249,
+          0.48957180976867676
+        ]
+      },
+      "compression": "Draco + WebP 1024"
+    },
+    {
+      "slug": "cilindrica",
+      "product_id": "3cc67eb1-e5b8-4fc8-9d4f-100000000005",
+      "model_url": "/models/coleccion/cilindrica.glb",
+      "originalBytes": 7795140,
+      "optimizedBytes": 310840,
+      "originalTriangles": 227508,
+      "optimizedTriangles": 64998,
+      "originalBounds": {
+        "min": [
+          -0.4887390732765198,
+          0,
+          -0.4888306260108948
+        ],
+        "max": [
+          0.4888611435890198,
+          0.98040771484375,
+          0.4888001084327698
+        ]
+      },
+      "optimizedBounds": {
+        "min": [
+          -0.4887390732765198,
+          0,
+          -0.4887695908546448
+        ],
+        "max": [
+          0.4887961745262146,
+          0.98040771484375,
+          0.4887656569480896
+        ]
+      },
+      "compression": "Draco + WebP 1024"
+    },
+    {
+      "slug": "facetada",
+      "product_id": "3cc67eb1-e5b8-4fc8-9d4f-100000000006",
+      "model_url": "/models/coleccion/facetada.glb",
+      "originalBytes": 7555880,
+      "optimizedBytes": 310364,
+      "originalTriangles": 221720,
+      "optimizedTriangles": 65000,
+      "originalBounds": {
+        "min": [
+          -0.4877930283546448,
+          0,
+          -0.4684754014015198
+        ],
+        "max": [
+          0.4876099228858948,
+          0.783111572265625,
+          0.4677429795265198
+        ]
+      },
+      "optimizedBounds": {
+        "min": [
+          -0.4877930283546448,
+          0,
+          -0.4684754014015198
+        ],
+        "max": [
+          0.4876099228858948,
+          0.7830967903137207,
+          0.4677518606185913
+        ]
+      },
+      "compression": "Draco + WebP 1024"
+    }
+  ]
+}

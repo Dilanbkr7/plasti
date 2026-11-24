@@ -1,0 +1,41 @@
+{
+  "generated": "2026-10-20T11:33:15.406Z",
+  "images": [
+    {
+      "name": "Semiesférica",
+      "original": 1752536,
+      "web": 28156,
+      "thumbnail": 3880
+    },
+    {
+      "name": "Cónica",
+      "original": 1844582,
+      "web": 33418,
+      "thumbnail": 4178
+    },
+    {
+      "name": "Hexagonal",
+      "original": 1940139,
+      "web": 81172,
+      "thumbnail": 4588
+    },
+    {
+      "name": "Esférica",
+      "original": 1844032,
+      "web": 71664,
+      "thumbnail": 5978
+    },
+    {
+      "name": "Cilíndrica",
+      "original": 1877119,
+      "web": 39156,
+      "thumbnail": 3924
+    },
+    {
+      "name": "Facetada",
+      "original": 1941497,
+      "web": 47226,
+      "thumbnail": 4986
+    }
+  ]
+}

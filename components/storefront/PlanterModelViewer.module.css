@@ -1,0 +1,112 @@
+.viewer {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 50% 38%,
+    #fff 0%,
+    #f7f8f1 50%,
+    #e8eddf 100%
+  );
+  color: #344a30;
+  isolation: isolate;
+  touch-action: none;
+}
+.viewer > div:has(canvas) {
+  touch-action: none;
+}
+.label {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 8px;
+  letter-spacing: 1.4px;
+  pointer-events: none;
+}
+.label > span:last-child {
+  color: #87927c;
+  letter-spacing: 0.3px;
+}
+.liveDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #7b9965;
+  box-shadow: 0 0 0 4px #7b996512;
+}
+.message button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 11px;
+  border: 1px solid #ced9c3;
+  border-radius: 25px;
+  background: #fffffff0;
+  color: #415a34;
+  font: inherit;
+  font-size: 9px;
+  cursor: pointer;
+}
+.hint {
+  position: absolute;
+  z-index: 2;
+  bottom: 13px;
+  left: 12px;
+  right: 12px;
+  text-align: center;
+  font-size: 8px;
+  color: #7b8970;
+  margin: 0;
+  pointer-events: none;
+}
+.message,
+.loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 25px;
+  text-align: center;
+  background: #f4f7ed;
+  font-size: 11px;
+  z-index: 1;
+}
+.message {
+  inset: 48px 0 40px;
+}
+.message > svg {
+  width: 28px;
+  height: 28px;
+  color: #82986e;
+}
+.message span {
+  line-height: 1.8;
+  color: #77856c;
+}
+.loading {
+  pointer-events: none;
+}
+.loading > span {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #dce4d1;
+  border-top-color: #6a8353;
+  animation: spin 0.9s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .loading > span {
+    animation: none;
+  }
+}

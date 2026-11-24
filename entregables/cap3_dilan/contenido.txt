@@ -1,0 +1,666 @@
+P0 [] ESCUELA POLITÉCNICA NACIONAL
+P1 [] 
+P2 [] ESCUELA DE FORMACIÓN DE TECNÓLOGOS
+P3 [] 
+P4 [] DESARROLLO DE UN SISTEMA WEB PARA LA GESTIÓN 
+P5 [] COMERCIAL DE PLASTIMAD MEDIANTE SCROLLYTELLING E INTELIGENCIA ARTIFICIAL
+P6 [] 
+P7 [] DESARROLLO DE UN SISTEMA WEB
+P8 [] 
+P9 [] 
+P10 [] TRABAJO DE INTEGRACIÓN CURRICULAR PRESENTADO COMO REQUISITO PARA LA OBTENCIÓN DEL TÍTULO DE TECNÓLOGO SUPERIOR EN DESARROLLO DE SOFTWARE
+P11 [] 
+P12 [] DILAN ARTEMIO OBANDO SUAREZ
+P13 [] 
+P14 [] DIRECTOR: BYRON GUSTAVO LOARTE CAJAMARCA
+P15 [] 
+P16 [] DMQ, enero 2027
+P17 [Titulos] CERTIFICACIONES
+P19 [Texto] Yo, DILAN ARTEMIO OBANDO SUAREZ declaro que el trabajo de integración curricular aquí descrito es de mi autoría; que no ha sido previamente presentado para ningún grado o calificación profesional; y, que he consultado las referencias bibliográficas que se incluyen en este documento.
+P20 [Texto] 
+P21 [Texto] 
+P22 [Texto] DILAN ARTEMIO OBANDO SUAREZdilan.obando@epn.edu.ecdillanobandos@hotmail.comDILAN ARTEMIO OBANDO SUAREZdilan.obando@epn.edu.ecdillanobandos@hotmail.com
+P23 [Texto] 
+P24 [Texto] 
+P25 [Texto] Certifico que el presente trabajo de integración curricular fue desarrollado por DILAN ARTEMIO OBANDO SUAREZ, bajo mi supervisión.
+P26 [Texto] 
+P27 [Texto] 
+P28 [Texto] Ing. Byron Loarte, MSc.DIRECTORbyron.loarteb@epn.edu.ecIng. Byron Loarte, MSc.DIRECTORbyron.loarteb@epn.edu.ec
+P29 [Texto] 
+P30 [Texto] 
+P31 [Titulos] DECLARACIÓN DE AUTORÍA
+P33 [Texto] A través de la presente declaración, afirmamos que el trabajo de integración curricular aquí descrito, así como el (los) producto(s) resultante(s) del mismo, son públicos y estarán a disposición de la comunidad a través del repositorio institucional de la Escuela Politécnica Nacional; sin embargo, la titularidad de los derechos patrimoniales nos corresponde a los autores que hemos contribuido en el desarrollo del presente trabajo; observando para el efecto las disposiciones establecidas por el órgano competente en propiedad intelectual, la normativa interna y demás normas.
+P34 [Texto] OBANDO SUAREZ DILAN ARTEMIO
+P35 [Texto] 
+P36 [Texto] 
+P37 [Texto] 
+P38 [Texto] 
+P39 [Texto] 
+P40 [Texto] 
+P41 [Texto] 
+P42 [Texto] 
+P43 [Texto] 
+P44 [Texto] 
+P45 [Texto] 
+P46 [Texto] 
+P47 [Texto] 
+P48 [Texto] 
+P49 [Texto] 
+P50 [Titulos] DEDICATORIA
+P52 [Texto] 
+P53 [Texto] 
+P54 [Texto] 
+P55 [Texto] 
+P56 [Texto] 
+P57 [Texto] 
+P58 [Texto] 
+P59 [Texto] 
+P60 [Texto] 
+P61 [Texto] 
+P62 [Texto] 
+P63 [Texto] 
+P64 [Texto] 
+P65 [Texto] 
+P66 [Texto] 
+P67 [Texto] 
+P68 [Texto] 
+P69 [Texto] 
+P70 [Texto] 
+P71 [Texto] 
+P72 [Texto] 
+P73 [Texto] 
+P74 [Texto] 
+P75 [Titulos] AGRADECIMIENTO
+P77 [Texto] 
+P78 [Texto] 
+P79 [Texto] 
+P80 [Texto] 
+P81 [Texto] 
+P82 [Texto] 
+P83 [Texto] 
+P84 [Texto] 
+P85 [Texto] 
+P86 [Texto] 
+P87 [Texto] 
+P88 [Texto] 
+P89 [Texto] 
+P90 [Texto] 
+P91 [Texto] 
+P92 [Texto] 
+P93 [Texto] 
+P94 [Texto] 
+P95 [Texto] 
+P96 [Texto] 
+P97 [Texto] 
+P98 [Texto] 
+P99 [Texto] 
+P100 [Titulos] ÍNDICE DE CONTENIDO
+P102 [Texto] 
+P103 [Texto] 
+P104 [Texto] 
+P105 [Texto] 
+P106 [Texto] 
+P107 [Texto] 
+P108 [Texto] 
+P109 [Texto] 
+P110 [Texto] 
+P111 [Texto] 
+P112 [Texto] 
+P113 [Texto] 
+P114 [Texto] 
+P115 [] 
+P116 [Titulos] RESUMEN
+P117 [Texto] 
+P118 [Texto] 
+P119 [Texto] 
+P120 [Texto] 
+P121 [Texto] 
+P122 [Texto] 
+P123 [Texto] 
+P124 [Texto] 
+P125 [Texto] 
+P126 [Texto] 
+P127 [Texto] 
+P128 [Texto] 
+P129 [Texto] 
+P130 [Texto] 
+P131 [Texto] 
+P132 [Texto] 
+P133 [Texto] 
+P134 [Texto] 
+P135 [Texto] 
+P136 [Texto] 
+P137 [Texto] 
+P138 [Texto] 
+P139 [Texto] 
+P140 [Titulos] ABSTRACT
+P141 [Texto] 
+P142 [Texto] 
+P143 [Texto] 
+P144 [Texto] 
+P145 [Texto] 
+P146 [Texto] 
+P147 [Texto] 
+P148 [Texto] 
+P149 [Texto] 
+P150 [Texto] 
+P151 [Texto] 
+P152 [Texto] 
+P153 [Texto] 
+P154 [Texto] 
+P155 [Texto] 
+P156 [Texto] 
+P157 [Texto] 
+P158 [Texto] 
+P159 [Texto] 
+P160 [Texto] 
+P161 [Texto] 
+P162 [] 
+P163 [Ttulo1] DESCRIPCIÓN DEL COMPONENTE DESARROLLADO
+P164 [Texto] PLASTIMAD es una empresa ecuatoriana dedicada principalmente al desarrollo y comercialización de productos elaborados 100% a partir de materiales plásticos reciclados, ofreciendo soluciones sostenibles y amigables con el medio ambiente. Además, sus productos son comercializados y distribuidos en los sectores residencial, comercial y urbano, donde buscan integrar criterios de innovación, durabilidad y aprovechamiento responsable de los materiales. De esta manera, la empresa continuamente desarrolla alternativas que sustituyen soluciones tradicionales con el objetivo de contribuir a la conservación y protección del medio ambiente [XX].
+P165 [Texto] Durante el desarrollo de sus actividades comerciales, la empresa brinda información y asesoramiento a su distinguida clientela, con el objetivo de facilitar la selección de los productos más adecuados tomando en cuenta sus necesidades, así como las condiciones y características del espacio disponible. Sin embargo, actualmente la empresa enfrenta diversos aspectos negativos que afectan el funcionamiento de sus procesos de interacción comercial, experiencia visual inmersiva y asesoramiento al cliente, ya que la selección de productos depende principalmente de una comunicación presencial y manual que existe entre el cliente y el personal comercial. Asimismo, esta modalidad de atención provoca tiempos prolongados de atención, dificultad para atender a varios clientes de manera simultánea y posibles pérdidas de oportunidades comerciales. A esto se suma que los clientes no disponen de una herramienta digital que les permita visualizar los productos desde diferentes perspectivas, estimar la cantidad de unidades necesarias de acuerdo con las características y dimensiones del espacio disponible, así como conocer soluciones alternativas antes de realizar una compra [XX].
+P166 [Texto] En la actualidad, cada vez son más las empresas que van incorporando recursos digitales interactivos para transformar los catálogos tradicionales de productos en experiencias más atractivas e intuitivas [XX]. Entre las opciones que adquieren mayor importancia se encuentran las páginas de producto inmersivas y las narrativas visuales basadas en scrollytelling, que son utilizadas principalmente para mostrar los productos a través de una secuencia interactiva en la que el contenido visual se desarrolla conforme el usuario se desplaza por la página. A través de estos entornos, los clientes pueden ahora explorar progresivamente cada una de las características, así como las funcionalidades y aplicaciones de los productos a través de una serie de desplazamientos, animaciones y otros elementos visuales [XX]. 
+P167 [Texto] Frente a los desafíos que enfrenta el personal comercial de la empresa y considerando las ventajas que otorgan las páginas de producto inmersivas y las narrativas visuales basadas en scrollytelling, en este proyecto de Integración Curricular se pone en producción un sistema web para la gestión comercial de PLASTIMAD mediante scrollytelling e inteligencia artificial. En ese sentido, este sistema web permite, por una parte, presentar cada uno de los productos de la empresa mediante una experiencia visual inmersiva e interactiva y, por otra, incorpora un componente de inteligencia artificial que está orientado al análisis visual de la imagen proporcionada por el cliente, con el propósito de identificar las características relevantes del espacio y, posterior a ello, recomendar productos disponibles en el catálogo de la empresa, así como generar una estimación inicial de los productos requeridos y su costo aproximado. Asimismo, se dispone de un asistente conversacional para solventar consultas relacionadas con las características de los productos de PLASTIMAD. Por último, se dispone de un módulo de gestión comercial que permite registrar cada una de las solicitudes generadas por parte de los clientes, actualizar su estado y facilitar su seguimiento por parte del personal comercial cuando sea necesaria una atención personalizada. 
+P168 [Ttulo2] Objetivo general
+P169 [Texto] Desarrollar un sistema web para la gestión comercial de PLASTIMAD mediante scrollytelling e inteligencia artificial.
+P170 [Ttulo2] Objetivos específicos
+P171 [Texto] Analizar los procesos actuales de interacción y gestión comercial de PLASTIMAD para determinar los requerimientos del sistema web.
+P172 [Texto] Diseñar la arquitectura, el modelo de datos y las interfaces del sistema web, considerando la experiencia visual basada en scrollytelling y los componentes de inteligencia artificial.
+P173 [Texto] Codificar los módulos del sistema web, incluyendo las narrativas visuales basadas en scrollytelling, el análisis visual mediante inteligencia artificial para la recomendación de productos y generación de estimaciones iniciales, el asistente conversacional y el flujo automatizado de gestión comercial.
+P174 [Texto] Evaluar el funcionamiento del sistema mediante pruebas y validar el cumplimiento de los requisitos establecidos.
+P175 [Texto] Desplegar a producción el sistema web para su disponibilidad y uso por parte de los clientes y el personal comercial de PLASTIMAD.
+P176 [Texto] 
+P177 [Ttulo2] Alcance
+P178 [Texto] En todo proyecto, es fundamental que todo el equipo de trabajo defina y conozca con claridad el alcance que va a tener el proyecto, estableciendo aspectos como qué se va a desarrollar y cuáles son sus limitaciones. Sin duda, esto permite asegurar que las actividades estén claramente alineadas con los objetivos establecidos. Asimismo, delimitar el alcance desde el inicio facilita notablemente la planificación y la toma de decisiones, especialmente en proyectos ágiles, donde el trabajo se desarrolla a partir de ciclos de trabajo breves que permiten realizar entregas de manera incremental [XX].
+P179 [Texto] El alcance del sistema web se centra en fortalecer el proceso de interacción y gestión comercial de PLASTIMAD mediante una experiencia digital interactiva y el uso de inteligencia artificial. El alcance comprende el desarrollo de una interfaz web para la presentación de los maceteros mediante narrativas visuales basadas en scrollytelling, en la que el modelo tridimensional del producto se anima conforme el usuario desplaza la pantalla, permitiéndole explorar progresivamente sus características y aplicaciones. De igual manera, se incorporará un componente de inteligencia artificial para el análisis visual de las imágenes proporcionadas por el cliente, con el fin de identificar las características del espacio y generar una estimación inicial de las unidades requeridas y del costo aproximado. Además, se implementará un asistente conversacional para responder consultas sobre los productos y un flujo automatizado que permita registrar las solicitudes comerciales, gestionar su estado y facilitar su seguimiento por parte del personal comercial. De esta manera, la solución busca reducir la dependencia de la atención manual y proporcionar al cliente información inicial antes de la intervención del personal comercial.
+P180 [Texto] Por lo expuesto previamente, el sistema web se centra principalmente en fortalecer el proceso de interacción y gestión comercial de PLASTIMAD a través de una experiencia visual interactiva en conjunto con la integración de inteligencia artificial. En ese sentido, el alcance comprende el desarrollo de una interfaz web para la presentación de los maceteros mediante narrativas visuales basadas en scrollytelling, en la que el producto se anima conforme el usuario se va desplazando por la pantalla. De igual manera, se incorpora un componente de inteligencia artificial para el análisis visual de la imagen que el cliente proporcione, con el objetivo de identificar las características del espacio y proporcionar una estimación inicial de las unidades requeridas y del costo aproximado. Además, se implementa un asistente conversacional que permita responder a las consultas sobre los productos y un flujo que permita gestionar las solicitudes comerciales. Sin duda, este tipo de experiencia facilita notablemente la comprensión de los productos y proporciona al cliente información detallada que puede apoyar su proceso de decisión y selección antes de la compra, al tiempo que reduce la dependencia de explicaciones que pueden ser tediosas y exclusivamente manuales por parte del personal comercial. 
+P181 [Texto] Respecto a la parte técnica, el sistema web se desarrolla usando la metodología ágil Scrum para facilitar el seguimiento del proyecto y los entregables incrementales. Además, para el diseño de las interfaces de alto nivel se usa Figma y una arquitectura de software organizada en capas (MVC) que facilite su mantenimiento y futuras integraciones. Para el frontend se utiliza React con un conjunto de librerías y plataformas externas para la carga y animación del modelo tridimensional de la maceta. Respecto al backend, se usa Express acompañado de MySQL para la gestión de los datos. Por último, se ejecuta una serie de pruebas necesarias para cada uno de los módulos que se han desarrollado antes de desplegar el sistema en un entorno de producción posterior a la aprobación del dueño de la empresa.
+P182 [Texto] A continuación, se indican los perfiles de usuario, así como sus funciones dentro del sistema web.
+P183 [Texto] Administrador y actividades asociadas:
+P184 [Texto] Iniciar sesión.
+P185 [Texto] Cerrar sesión.
+P186 [Texto] Gestionar su perfil.
+P187 [Texto] Gestionar usuarios.
+P188 [Texto] Gestionar productos y catálogo.
+P189 [Texto] Gestionar quejas y/o sugerencias.
+P190 [Texto] Consultar solicitudes comerciales.
+P191 [Texto] Actualizar el estado de las solicitudes.
+P192 [Texto] Dar seguimiento a los clientes.
+P193 [Texto] 
+P194 [Texto] 
+P195 [Texto] Cliente y actividades asociadas 
+P196 [Texto] Registrarse.
+P197 [Texto] Iniciar sesión y cerrar sesión.
+P198 [Texto] Visualizar los productos mediante scrollytelling.
+P199 [Texto] Gestionar su perfil.
+P200 [Texto] Gestionar solicitudes comerciales.
+P201 [Texto] Cargar imagen del espacio para que, mediante inteligencia artificial, genere una estimación inicial de los productos requeridos y su costo aproximado.
+P202 [Texto] Realizar consultas al asistente conversacional sobre las características e información de los productos de PLASTIMAD.
+P203 [Ttulo2] Marco Teórico
+P204 [Texto] En este apartado del documento se listan sistemáticamente los principales fundamentos conceptuales y tecnológicos que están relacionados directamente con la solución propuesta [XX]. Además, estos conceptos permiten que el lector pueda comprender de forma clara cada una de las herramientas y tecnologías que intervienen en la construcción del sistema web, así como los elementos que permiten contextualizar su funcionamiento.
+P205 [Texto] Sistema web
+P206 [Texto] Es una solución informática cuya finalidad es permitir que los usuarios puedan acceder a las funcionalidades e información mediante un navegador web, sin requerir la instalación de programas adicionales en el dispositivo informático. Además, su funcionamiento se compone fundamentalmente de una parte cliente, que se encarga de la presentación visual de los elementos, y otra parte que es el servidor, que es responsable de la lógica del negocio y del acceso a los datos [XX].
+P207 [] Interfaz de usuario (UI) y experiencia de usuario (UX) 
+P208 [] UX corresponde al conjunto de percepciones y sensaciones que una persona desarrolla al interactuar de forma directa, ya sea con un producto, un sistema o un servicio. Por tal motivo, es fundamental que todo sistema web posea una buena UX, ya que esto garantiza una alta satisfacción del usuario final. Por otro lado, la UI hace referencia a los elementos gráficos y visuales que permiten a los usuarios comunicarse e intercambiar información [XX].
+P209 [Texto] Narrativa digital
+P210 [Texto] Consiste principalmente en comunicar y presentar cierta información a través de recursos y medios digitales. En el contexto de un sistema web, permite que la mayor parte de la información se estructure y organice de manera dinámica e interactiva, incorporando para ello una serie de elementos visuales que permitan captar la atención y simplificar el análisis y entendimiento de la información por parte del usuario [XX].
+P211 [Texto] Scrollytelling
+P212 [Texto] Se define como una técnica de narración visual mediante la cual el contenido de una página web se muestra progresivamente a medida que el usuario se va desplazando. A medida que el usuario realiza scroll, diferentes elementos visuales de la página web se van modificando con el objetivo de transformar el contenido estático en una experiencia más dinámica e interactiva [XX].
+P213 [Texto] Modelo tridimensional
+P214 [Texto] Se define particularmente como la representación digital de un objeto del mundo real dentro de un entorno virtual. Además, su estructura está principalmente formada por componentes tales como vértices, aristas y caras, a los cuales se les pueden incorporar materiales, colores y texturas para una mejor representación. Asimismo, para integrar este tipo de recursos en las páginas web y su posterior visualización en navegadores web, es vital la utilización del formato glTF que permite su posterior visualización en entornos digitales [XX].
+P215 [Texto] WebGL y tecnologías 3D para la web
+P216 [Texto] WebGL es una tecnología que ayuda a representar gráficos en 3D y generar escenas interactivas directamente en el navegador sin requerir la instalación de componentes adicionales. Mediante esta tecnología es posible crear escenas, formas, imágenes y animaciones, pero se complementa con otras librerías y herramientas que facilitan su uso e implementación [XX].
+P217 [Texto] Three.js
+P218 [Texto] Principalmente es una librería que se encuentra orientada a la creación y representación de gráficos tridimensionales dentro del navegador mediante la tecnología WebGL. Además, proporciona una amplia gama de elementos de una escena tales como cámaras, luces, materiales, geometrías y mecanismos de renderizado, sin requerir que el desarrollador realice una programación directa con las operaciones de bajo nivel de WebGL [XX].
+P219 [Texto] React Three Fiber (R3F) y Drei
+P220 [Texto] React Three Fiber se ha utilizado particularmente como una librería que ha permitido usar Three.js directamente en aplicaciones que han sido desarrolladas con React. De manera complementaria, Drei es una librería que incorpora componentes auxiliares listos para ser usados en R3F y Three.js, simplificando la implementación de funcionalidades relacionadas con el desarrollo de entornos 3D [XX].
+P221 [Texto] Visión artificial
+P222 [Texto] Actualmente, es una tecnología que posibilita a los sistemas informáticos analizar y extraer información a partir de imágenes mediante modelos entrenados con grandes volúmenes de datos. Además, esta tecnología ha permitido obtener información relevante a partir de una fotografía y utilizarla posteriormente ya sea en la toma de decisiones o en procesos automatizados [XX].
+P223 [Texto] Asistente conversacional
+P224 [] También conocido como chatbot, es un software diseñado principalmente para establecer una interacción directa con las personas a través de conversaciones escritas. Además, el funcionamiento de estos asistentes conversacionales puede incorporar técnicas de inteligencia artificial que permiten generar respuestas relacionadas con las necesidades planteadas por el usuario [XX].
+P225 [Texto] Sistemas de recomendación
+P226 [] Surgen con el objetivo de presentar a los usuarios artículos, productos o servicios relacionados basados en sus intereses, preferencias, características, entre otros. Su finalidad es ofrecer resultados que sean personalizados, pero sobre todo que estén de acuerdo con las necesidades de cada usuario [XX].
+P227 [Texto] 
+P228 [Ttulo1] 2 METODOLOGÍA
+P229 [Texto] Uno de los métodos utilizados principalmente en investigación, que permite analizar en profundidad una situación o fenómeno con el fin de comprenderlo de manera integral, considerando las características y necesidades específicas del contexto estudiado, es el estudio de casos. Asimismo, este método asegura que la recolección y el análisis de la información respondan directamente a las particularidades del entorno, las cuales son fundamentales e indispensables para explicar el fenómeno [XX].
+P230 [Texto] Por lo citado previamente, en la presente tesis se ha utilizado el estudio de casos, ya que el mismo ha permitido recopilar y analizar detalladamente los procesos de interacción con los clientes y de gestión comercial de PLASTIMAD, así como identificar las principales dificultades relacionadas con la comunicación con los clientes y la presentación de los productos.
+P231 [Texto] A partir del análisis de esta situación, se identificaron las necesidades existentes y se establecieron las bases para desarrollar una solución tecnológica moderna y escalable, orientada a mejorar la interacción con los clientes, facilitar la presentación de los productos y apoyar la gestión de solicitudes comerciales mediante una experiencia visual interactiva y la integración de herramientas de inteligencia artificial. Asimismo, se espera que los resultados de este trabajo sirvan de referencia para el desarrollo de proyectos con características similares.
+P232 [Ttulo2] 2.1 Metodología de Desarrollo 
+P233 [Texto] En la actualidad, los marcos de trabajo otorgan una estructura con una serie de fases, roles, técnicas y lineamientos que han guiado la construcción de un producto software. Asimismo, estos marcos permiten organizar el trabajo, optimizar los recursos, gestionar los riesgos y contribuir a la calidad del software. De igual manera, para la construcción de un producto software existen dos principales enfoques: por una parte, el enfoque tradicional, que se caracteriza principalmente por una planificación previa y una secuencia definida de etapas y, por otra parte, el enfoque ágil, que promueve la adaptación a los cambios, la colaboración continua con los interesados y el desarrollo iterativo y progresivo [XX].
+P234 [Texto] Respecto al enfoque ágil, se encuentran principalmente las metodologías ágiles que permiten la construcción de un producto software a través de una perspectiva flexible y colaborativa. Asimismo, estas metodologías promueven en todo momento una colaboración continua con los interesados, la adaptación continua a los cambios, así como la entrega frecuente de valor. De esta manera, se contribuye a la calidad del producto software en función de las necesidades de los usuarios y las actividades planificadas [XX].
+P235 [Texto] Scrum se ha considerado como un marco de trabajo ágil ampliamente utilizado en la construcción de un producto de software, ya que permite al equipo de trabajo organizar las actividades y dividir el trabajo en Sprints, establecer objetivos específicos medibles y realizar entregas de manera progresiva. De esta manera, se promueve la transparencia durante el desarrollo, con el objetivo de entregar un software funcional de manera frecuente y sobre todo alineado con las necesidades del negocio y de los stakeholders [XX]. Por lo antes citado, para la construcción y despliegue del sistema web se ha hecho uso de Scrum, ya que este marco de trabajo ha permitido organizar y entregar de manera incremental los procesos de interacción con los clientes y de gestión comercial de PLASTIMAD, así como ajustar el producto de acuerdo con la retroalimentación obtenida. 
+P236 [Texto] A continuación, se presenta de forma sistematizada cómo se ha implementado este enfoque ágil en el desarrollo del sistema web. 
+P237 [Ttulo3] Roles
+P238 [] La definición de roles se ha considerado un aspecto fundamental y clave dentro del marco de trabajo Scrum, ya que cada integrante del equipo debe cumplir una función específica. En este contexto, el Product Owner se encarga principalmente de asegurar que el producto final aporte valor significativo para el negocio; el Scrum Master facilita el desarrollo adecuado de las actividades, así como ayudar al equipo en la resolución de obstáculos que se puedan presentar, mientras que el equipo de desarrollo es el principal responsable de la construcción del sistema web [XX]. 
+P239 [] En el presente proyecto, se han establecido responsabilidades específicas para favorecer la coordinación de actividades y asegurar de esta manera una adecuada ejecución de las tareas durante las fases de análisis, diseño, implementación y validación del sistema web para la gestión comercial de PLASTIMAD.
+P240 [Texto] Product Owner
+P241 [] Esta persona se encarga principalmente de determinar qué debe construirse, así como de asegurar que el producto desarrollado y entregado de manera incremental aporte un valor real y significativo para el negocio y sus clientes. Para desempeñar correctamente esta función, es necesario mantener una comunicación constante con todo el equipo de trabajo con el propósito de priorizar las funcionalidades y asegurar que su desarrollo responda al objetivo general del proyecto [XX]. Por lo antes citado, la XXXX muestra al integrante responsable de asumir las actividades correspondientes a este rol dentro del proyecto.
+P242 [Texto] Scrum Master
+P243 [] Esta persona se encarga principalmente de velar por que el equipo trabaje de acuerdo con los principios y las prácticas de Scrum. Además, su función principal consiste en apoyar al equipo en la organización de las reuniones diarias y promover una adecuada organización de las actividades durante la planificación y ejecución de los diferentes Sprints [XX]. Por lo antes citado, la XXXX muestra al integrante responsable de asumir las actividades correspondientes a este rol dentro del proyecto.
+P244 [Texto] Development Team
+P245 [] Es el equipo responsable de analizar, diseñar, programar, probar y entregar las funcionalidades correspondientes a cada iteración. Además, sus integrantes se caracterizan principalmente por trabajar de manera colaborativa y organizada para transformar cada uno de los requerimientos establecidos en funcionalidades concretas del sistema [XX]. Por lo antes citado, la XXXX muestra al integrante responsable de asumir las actividades correspondientes a este rol dentro del proyecto.
+P246 [] Tabla 2.1. Identificación y distribución de responsables.
+TABLA 247
+ROL | INTREGRANTES
+Product Owner | Ing. Byron Loarte, MSc.
+Scrum Master | Ing. Byron Loarte, MSc.
+Development Team | Sr. Dilan Obando.
+P248 [] 
+P249 [Ttulo3] Artefactos 
+P250 [] Dentro del marco de trabajo Scrum, cada artefacto (Recopilación de requisitos, Historias de usuario, Product Backlog y Sprint Backlog) se define como un elemento fundamental que permite organizar y dar seguimiento al trabajo del equipo a lo largo del proyecto. Además, estos elementos contribuyen a la transparencia, ya que permiten, por una parte, mantener la información organizada y, por otra, estandarizada y visible para todos los integrantes del equipo [XX]. A continuación, se detallan los artefactos que se han utilizado para la construcción del sistema web. 
+P251 [Texto] Recopilación de Requerimientos
+P252 [Texto] Este elemento permite que los requerimientos se organicen de forma general considerando las necesidades de los usuarios, así como las funcionalidades que deben desarrollarse y entregarse prioritariamente, de acuerdo con su relevancia para el negocio [XX]. Por lo antes expuesto, en el XXX se presenta el artefacto completo y en la XXX se presenta el registro de los requisitos de PLASTIMAD en el formato correspondiente.
+P253 [Texto] Tabla 2.2 Diseño del formato para el registro de los requisitos.
+TABLA 254
+RECOPILACIÓN DE REQUISITOS
+TIPO DE SISTEMA | ID - RR | ENUNCIADO DEL ÍTEM
+SISTEMA WEB  | RR - 001 | En el sistema web se requiere que el administrador pueda realizar lo siguiente:  / Gestionar usuarios. / Gestionar el sistema web. / Gestionar la landing page. / Consultar solicitudes de clientes. / Gestionar quejas y/o sugerencias.
+P255 [Texto] 
+P256 [Texto] Historias de Usuario
+P257 [Texto] Este elemento permite describir de forma detallada cada una de las necesidades de los usuarios. Además, cuenta con una estructura casi estándar que permite identificar claramente quién requiere dicha funcionalidad, qué necesita realizar y con qué propósito, así como otros aspectos relevantes para el desarrollo y seguimiento de dicha funcionalidad [XX]. Por lo antes expuesto, en el XXX se presentan las tablas completas y en la XXX se presenta el registro de una funcionalidad de PLASTIMAD en el formato correspondiente.
+P258 [Descripcin] Tabla 2.3 Diseño del formato para el registro de una funcionalidad.
+TABLA 259
+HISTORIA DE USUARIO
+Identificador: HU-001 | Usuario: Administrador y Cliente
+Nombre de la historia: Como usuario administrador o cliente, quiero visualizar una landing page para conocer los productos, características, aplicaciones e información comercial de PLASTIMAD de una manera clara, atractiva e interactiva.
+Prioridad en negocio: Media | Riesgo en desarrollo: Media
+Iteración asignada: 2
+Responsable (s): Dilan Obando 
+Descripción: El sistema web presenta una landing page con diferentes secciones de información accesibles para los usuarios, con el propósito de dar a conocer PLASTIMAD y facilitar la exploración inicial de sus productos y soluciones. Además, esta página se conforma por las siguientes secciones: / Sección principal de presentación de PLASTIMAD. / Sección de productos y soluciones elaboradas con materiales plásticos reciclados. / Sección interactiva para la presentación de características y aplicaciones de los productos mediante scrollytelling. / Sección de asesoramiento y contacto comercial.
+Observación: Todos los usuarios pueden obtener un panorama general de PLASTIMAD y de los productos que ofrece, facilitando de esta manera la identificación de alternativas de acuerdo con sus necesidades antes de iniciar un proceso de asesoramiento o solicitud comercial.
+P260 [Texto] 
+P261 [Texto] Product Backlog 
+P262 [Texto] Este elemento se alimenta principalmente de las historias de usuario y permite establecer un orden de prioridad para el desarrollo de las funcionalidades, considerando las necesidades de los usuarios, los requerimientos de interacción comercial, así como los objetivos y el alcance que han sido definidos al inicio del proyecto [XX]. Por lo antes expuesto, en el XXX se presenta el artefacto completo y en la XXX se presenta el registro de los requisitos de PLASTIMAD en el formato correspondiente.
+P263 [Texto] Tabla 2.4 Diseño del formato para el listado de los requisitos con base en una prioridad.
+TABLA 264
+PRODUCT BACKLOG
+ID-HU | DESCRIPCIÓN DE LA HISTORIA | ITERACIÓN ASIGNADA | ESTADO | PRIORIDAD
+HU-001 | Visualizar landing page informativa e interactiva de PLASTIMAD | 2 | Finalizado | Media
+P265 [Texto] 
+P266 [Texto] Sprint Backlog
+P267 [Texto] Se constituye como un elemento dinámico ya que permite registrar y detallar las actividades que posteriormente el equipo de desarrollo se compromete a realizar durante una iteración. Asimismo, este artefacto también funciona como un mecanismo de control de alcance a corto plazo con el objetivo de mitigar riesgos operativos y asegurar incrementos de software tangibles y funcionales [XX]. Por lo antes expuesto, en el XXX se presenta el artefacto completo y en la XXX se presenta el registro de los requisitos de PLASTIMAD en el formato correspondiente.
+P268 [Texto] Tabla 2.5 Diseño del formato para el listado de actividades por cada iteración.
+TABLA 269
+DESARROLLO SPRINT BACKLOG
+ID – SB  | NOMBRE | MÓDULO | ID – HU  | HU | ACTIVIDADES | HORAS ESTIMADAS
+SB-000 | Configuración del ambiente de desarrollo | N/A | N/A | N/A | Analizar requerimientos técnicos. / Instalar herramientas de desarrollo. / Configurar dependencias. / Configurar estructura frontend y backend. / Configurar repositorio de GitHub. / Configurar la conexión inicial entre frontend y backend. / Realizar pruebas iniciales. | 15H
+P270 [Texto] 
+P271 [Ttulo2] 2.2 Diseño de interfaces
+P272 [Texto] Se enfoca en construir una capa visual que sea clara, interactiva y orientada a la presentación e intercambio de información. Además, este proceso involucra la creación, el posicionamiento y la aplicación de estilos a los elementos visuales, tales como textos, imágenes, controles de navegación y otros elementos que conforman la interfaz del sistema software [XX]. 
+P273 [Texto] En el contexto de PLASTIMAD, se ha diseñado un conjunto de interfaces que facilitan la presentación de los productos, así como la gestión de solicitudes comerciales mediante una experiencia visual interactiva. En ese sentido, a continuación, se presenta la herramienta que se ha utilizado para desarrollar estas interfaces.
+P274 [Ttulo3] Herramienta para el diseño
+P275 [] Figma es una plataforma que trabaja en línea y que permite a los diseñadores y desarrolladores elaborar prototipos (de baja y alta fidelidad) y organizar visualmente las interfaces antes de su implementación como prototipos. Además, su utilización ha permitido definir de forma colaborativa la estructura y los componentes visuales de las interfaces del sistema web [XX]. Por lo antes citado, la XXX presenta un ejemplar en su versión final y las restantes interfaces se listan de forma sistematizada en el XXX.
+P276 [Texto] Figura 3.1 Diseño de alto nivel para la landing page.
+P277 [Ttulo2] 2.3 Diseño de la arquitectura 
+P278 [Texto] En el contexto del software, la arquitectura se refiere a la forma en que se organizan, comunican y relacionan entre sí los diferentes componentes del sistema. Además, funciona como el plano maestro que guía la etapa de codificación, favoreciendo la escalabilidad, el mantenimiento, la seguridad y las futuras integraciones a nivel de funcionalidades y herramientas [XX]. Con base en las necesidades del proyecto, se ha organizado todo el sistema web en un par de componentes: un backend que permite gestionar la lógica y el acceso a los datos, y un frontend que se encarga de la presentación y la interacción con el usuario final. En ese sentido, a continuación, se presenta el patrón de arquitectura que se ha utilizado para los dos componentes.
+P279 [Ttulo3] Patrón arquitectónico
+P280 [] Para el desarrollo de los componentes del sistema web se ha adoptado una arquitectura organizada en capas. En la que cada capa se encarga de una tarea distinta, por ejemplo, la capa del Modelo se encarga principalmente de establecer la comunicación con la base de datos y su posterior intercambio de información. Por su parte, la capa de la Vista se encarga principalmente de renderizar los elementos visuales y mostrar la información al usuario final. Por último, la capa de Controlador se considera como el cerebro de este patrón arquitectónico ya que la misma tiene la tarea de recibir y procesar las peticiones de los usuarios, conectarse con el modelo para hacer consultas a la base de datos y luego entregar la información en la parte visual [XX]. Por lo antes mencionado, se ha utilizado para la parte backend Express, para la parte frontend React y para la base de datos MySQL, organizando la lógica del negocio y la presentación de la información en capas modulares, reutilizables y escalables, las cuales se detallan en la XXX.
+P281 [Texto] Figura 3.2 Distribución de capas para los componentes backend y frontend.
+P282 [Sinespaciado] 
+P283 [Ttulo2] 2.6 Herramientas y librerías de desarrollo
+P284 [Texto] Se constituyen como recursos tecnológicos que permiten transformar una idea en una solución de software funcional, al facilitar la construcción, integración y optimización de sus componentes [XX]. En ese sentido, las herramientas de desarrollo que se describen en la XXX se han utilizado para facilitar la creación, el diseño, la programación, las pruebas y el posterior mantenimiento del sistema web. Además, dicha selección se ha realizado de acuerdo con las tecnologías que se han implementado, así como con las librerías y el patrón arquitectónico.
+P285 [Descripcin] Tabla 2.6 Listado de herramientas sistematizadas.
+TABLA 286
+Herramienta | Justificación
+VITE | Se ha utilizado como herramienta de desarrollo y construcción de la parte frontend del sistema web [XX].
+GIT Y GITHUB | Se han utilizado para el control de versiones y el almacenamiento remoto del código del sistema web [XX].
+POSTMAN | Se ha considerado útil para realizar pruebas manuales de los servicios y respuestas del backend antes de la implementación con el frontend [XX].
+NODE.JS | Entorno utilizado para la ejecución del backend del sistema web [XX].
+MYSQL | Se ha utilizado como un gestor de datos relacional para salvaguardar la información del sistema web [XX].
+P287 [Sinespaciado] 
+P288 [Ttulo3] Librerías
+P289 [Texto] Actúan como una serie de bloques que son funcionales y a la vez reutilizables con el objetivo de resolver problemas concretos, reducir la complejidad de implementación y sobre todo ampliar las posibilidades técnicas de un proyecto software [XX]. Por lo antes citado, las librerías que se describen en la XXX se han empleado para reutilizar funcionalidades que han sido desarrolladas previamente y facilitar la construcción de los módulos del sistema web. Además, su utilización ha permitido reducir código repetitivo y concentrar el desarrollo en las necesidades específicas del proyecto.
+P290 [Descripcin] Tabla 2.7 Librerías que han facilitado la construcción de los módulos.
+TABLA 291
+LIBRERÍAS | DESCRIPCIÓN
+REACT | Se ha utilizado para construir las interfaces de usuario mediante componentes reutilizables [XX].
+THREE.JS | Librería utilizada para representar gráficos y escenas tridimensionales dentro del sistema web mediante WebGL [XX].
+REACT THREE FIBER | Librería utilizada para construir escenas de Three.js como componentes de React, siendo estas útiles para el sistema web [XX].
+DREI | Conjunto de utilidades complementarias para cámaras, modelos y otros elementos de escenas tridimensionales [XX].
+P292 [Texto] 
+P293 [Texto] 
+P294 [Texto] 
+P295 [Texto] 
+P296 [] 
+P297 [Nivel1] RESULTADOS
+P298 [] 
+P299 [Titulos] 
+P300 [Ttulo1] 
+P301 [] 
+P302 [] 
+P303 [] 
+P304 [] 
+P305 [] 
+P306 [] 
+P307 [] 
+P308 [] 
+P309 [] 
+P310 [] 
+P311 [] 
+P312 [] 
+P313 [] 
+P314 [] 
+P315 [] 
+P316 [] 
+P317 [] 
+P318 [] 
+P319 [] 
+P320 [] 
+P321 [] 
+P322 [] 
+P323 [] 
+P324 [] 
+P325 [Nivel1] CONCLUSIONES
+P326 [] 
+P327 [] 
+P328 [] 
+P329 [] 
+P330 [] 
+P331 [] 
+P332 [] 
+P333 [] 
+P334 [] 
+P335 [] 
+P336 [] 
+P337 [] 
+P338 [] 
+P339 [] 
+P340 [] 
+P341 [] 
+P342 [] 
+P343 [] 
+P344 [] 
+P345 [] 
+P346 [] 
+P347 [] 
+P348 [] 
+P349 [] 
+P350 [] 
+P351 [] 
+P352 [] 
+P353 [Nivel1] RECOMENDACIONES
+P354 [Texto] 
+P355 [Texto] 
+P356 [Texto] 
+P357 [Texto] 
+P358 [Texto] 
+P359 [Texto] 
+P360 [Texto] 
+P361 [Texto] 
+P362 [Texto] 
+P363 [Texto] 
+P364 [Texto] 
+P365 [Texto] 
+P366 [Texto] 
+P367 [Texto] 
+P368 [Texto] 
+P369 [Texto] 
+P370 [Texto] 
+P371 [Texto] 
+P372 [Texto] 
+P373 [Texto] 
+P374 [Texto] 
+P375 [Texto] 
+P376 [Texto] 
+P377 [Prrafodelista] BIBLIOGRAFÍAS
+P378 [Referencia] [1] PLASTIMAD, «Inicio», s. f. [En línea]. Available: https://plastimad.com/. [Accedido: 5 octubre 2026].
+P379 [Referencia] [2] MDN Web Docs, «Client-server overview», s. f. [En línea]. Available: https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/First_steps/Client-Server_overview. [Accedido: 5 octubre 2026].
+P380 [Referencia] [3] D. Norman y J. Nielsen, «The Definition of User Experience (UX), Nielsen Norman Group», 8 agosto 1998. [En línea]. Available: https://www.nngroup.com/articles/definition-user-experience/. [Accedido: 5 octubre 2026].
+P381 [Referencia] [4] K. Schwaber y J. Sutherland, «La Guía Scrum», noviembre 2020. [En línea]. Available: https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-Spanish-Latin-South-American.pdf. [Accedido: 5 octubre 2026].
+P382 [Referencia] [5] R. Samora, «An Introduction to Scrollama.js, The Pudding», noviembre 2017. [En línea]. Available: https://pudding.cool/process/introducing-scrollama/. [Accedido: 5 octubre 2026].
+P383 [Referencia] [6] The Khronos Group, «glTF — Runtime 3D Asset Delivery», s. f. [En línea]. Available: https://www.khronos.org/gltf/. [Accedido: 5 octubre 2026].
+P384 [Referencia] [7] MDN Web Docs, «WebGL: 2D and 3D graphics for the web», s. f. [En línea]. Available: https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API. [Accedido: 5 octubre 2026].
+P385 [Referencia] [8] Three.js, «Three.js manual», s. f. [En línea]. Available: https://threejs.org/manual/. [Accedido: 5 octubre 2026].
+P386 [Referencia] [9] Poimandres, «Introduction — React Three Fiber», s. f. [En línea]. Available: https://r3f.docs.pmnd.rs/getting-started/introduction. [Accedido: 5 octubre 2026].
+P387 [Referencia] [10] Microsoft, «The TypeScript Handbook», s. f. [En línea]. Available: https://www.typescriptlang.org/docs/handbook/intro.html. [Accedido: 5 octubre 2026].
+P388 [Referencia] [11] Google Cloud, «Cloud Vision API documentation», s. f. [En línea]. Available: https://docs.cloud.google.com/vision/docs. [Accedido: 5 octubre 2026].
+P389 [Referencia] [12] Google Cloud, «Dialogflow CX», s. f. [En línea]. Available: https://docs.cloud.google.com/dialogflow/docs. [Accedido: 5 octubre 2026].
+P390 [Referencia] [13] Google for Developers, «Recommendations: what and why?», s. f. [En línea]. Available: https://developers.google.com/machine-learning/recommendation/overview. [Accedido: 5 octubre 2026].
+P391 [Referencia] [14] Oracle, «MySQL 8.4 Reference Manual — What is MySQL?», s. f. [En línea]. Available: https://dev.mysql.com/doc/refman/8.4/en/what-is-mysql.html. [Accedido: 5 octubre 2026].
+P392 [Referencia] [15] Poimandres, «Introduction — Drei», s. f. [En línea]. Available: https://drei.docs.pmnd.rs/getting-started/introduction. [Accedido: 5 octubre 2026].
+P393 [Referencia] [16] React, «Quick Start», s. f. [En línea]. Available: https://react.dev/learn. [Accedido: 5 octubre 2026].
+P394 [Referencia] [17] MDN Web Docs, «JavaScript Guide», s. f. [En línea]. Available: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide. [Accedido: 5 octubre 2026].
+P395 [Referencia] [18] Node.js, «Introduction to Node.js», s. f. [En línea]. Available: https://nodejs.org/learn/getting-started/introduction-to-nodejs. [Accedido: 5 octubre 2026].
+P396 [Referencia] [19] Vite, «Getting Started», s. f. [En línea]. Available: https://vite.dev/guide/. [Accedido: 5 octubre 2026].
+P397 [Referencia] [20] Figma, «Guide to prototyping in Figma», s. f. [En línea]. Available: https://help.figma.com/hc/en-us/articles/360040314193-Guide-to-prototyping-in-Figma. [Accedido: 5 octubre 2026].
+P398 [Referencia] [21] S. Chacon y B. Straub, «Pro Git — Getting Started — About Version Control», s. f. [En línea]. Available: https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control. [Accedido: 5 octubre 2026].
+P399 [Referencia] [22] GitHub, «What is GitHub?», s. f. [En línea]. Available: https://docs.github.com/en/get-started/start-your-journey/what-is-github. [Accedido: 5 octubre 2026].
+P400 [Referencia] [23] Microsoft, «Documentation for Visual Studio Code», s. f. [En línea]. Available: https://code.visualstudio.com/docs. [Accedido: 5 octubre 2026].
+P401 [Referencia] [24] Postman, «Get started in Postman», s. f. [En línea]. Available: https://learning.postman.com/docs/getting-started/overview/. [Accedido: 5 octubre 2026].
+P402 [Referencia] [25] Scrum.org, «What is a Product Backlog?», s. f. [En línea]. Available: https://www.scrum.org/resources/what-is-a-product-backlog. [Accedido: 5 octubre 2026].
+P403 [Referencia] [26] Agile Alliance, «What are User Stories?», s. f. [En línea]. Available: https://agilealliance.org/glossary/user-stories/. [Accedido: 5 octubre 2026].
+P404 [Referencia] [27] Scrum.org, «What is a Sprint Backlog?», s. f. [En línea]. Available: https://www.scrum.org/resources/what-is-a-sprint-backlog. [Accedido: 5 octubre 2026].
+P405 [Referencia] [28] K. Beck et al., «Manifiesto por el Desarrollo Ágil de Software», 2001. [En línea]. Available: https://agilemanifesto.org/iso/es/manifesto.html. [Accedido: 5 octubre 2026].
+P406 [Referencia] [29] Programa de las Naciones Unidas para el Medio Ambiente, «Turning off the Tap: How the world can end plastic pollution and create a circular economy», 16 mayo 2023. [En línea]. Available: https://www.unep.org/resources/turning-off-tap-end-plastic-pollution-create-circular-economy. [Accedido: 5 octubre 2026].
+P407 [Referencia] [30] Organización para la Cooperación y el Desarrollo Económicos, «Global Plastics Outlook: Economic Drivers, Environmental Impacts and Policy Options», 22 febrero 2022. [En línea]. Available: https://www.oecd.org/en/publications/2022/02/global-plastics-outlook_a653d1c9/full-report.html. [Accedido: 5 octubre 2026].
+P408 [Referencia] [31] World Wide Web Consortium, «Web Content Accessibility Guidelines (WCAG) 2.2», 12 diciembre 2024. [En línea]. Available: https://www.w3.org/TR/2024/REC-WCAG22-20241212/. [Accedido: 5 octubre 2026].
+P409 [Referencia] [32] Google, «Web Vitals, web.dev», s. f. [En línea]. Available: https://web.dev/articles/vitals. [Accedido: 5 octubre 2026].
+P410 [Referencia] [33] OWASP Foundation, «Authentication Cheat Sheet», s. f. [En línea]. Available: https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html. [Accedido: 5 octubre 2026].
+P411 [Referencia] [34] OWASP Foundation, «Authorization Cheat Sheet», s. f. [En línea]. Available: https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html. [Accedido: 5 octubre 2026].
+P412 [Referencia] [35] OWASP Foundation, «File Upload Cheat Sheet», s. f. [En línea]. Available: https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html. [Accedido: 5 octubre 2026].
+P413 [Referencia] [36] OWASP Foundation, «Password Storage Cheat Sheet», s. f. [En línea]. Available: https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html. [Accedido: 5 octubre 2026].
+P414 [Referencia] [37] OWASP Foundation, «REST Security Cheat Sheet», s. f. [En línea]. Available: https://cheatsheetseries.owasp.org/cheatsheets/REST_Security_Cheat_Sheet.html. [Accedido: 5 octubre 2026].
+P415 [Referencia] [38] Vitest, «Getting Started», s. f. [En línea]. Available: https://vitest.dev/guide/. [Accedido: 5 octubre 2026].
+P416 [Referencia] [39] Testing Library, «React Testing Library», s. f. [En línea]. Available: https://testing-library.com/docs/react-testing-library/intro/. [Accedido: 5 octubre 2026].
+P417 [Referencia] [40] Microsoft, «Installation, Playwright», s. f. [En línea]. Available: https://playwright.dev/docs/intro. [Accedido: 5 octubre 2026].
+P418 [Referencia] [41] Grafana Labs, «Load test types, Grafana k6 documentation», s. f. [En línea]. Available: https://grafana.com/docs/k6/latest/testing-guides/test-types/. [Accedido: 5 octubre 2026].
+P419 [Referencia] [42] Agile Alliance, «What is Acceptance Testing?», s. f. [En línea]. Available: https://agilealliance.org/glossary/acceptance-testing/. [Accedido: 5 octubre 2026].
+P420 [Referencia] [43] Vercel, «Vite on Vercel», s. f. [En línea]. Available: https://vercel.com/docs/frameworks/frontend/vite. [Accedido: 5 octubre 2026].
+P421 [Referencia] [44] Oracle, «MySQL 8.4 Reference Manual — Backup and Recovery», s. f. [En línea]. Available: https://dev.mysql.com/doc/refman/8.4/en/backup-and-recovery.html. [Accedido: 5 octubre 2026].
+P422 [Referencia] [45] E. Tabassi, «Artificial Intelligence Risk Management Framework (AI RMF 1.0), NIST AI 100-1», 26 enero 2023. [En línea]. Available: https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10. [Accedido: 5 octubre 2026].
+P423 [Prrafodelista] ANEXOS
+P424 [] 
+P425 [Texto] A continuación, se presenta cada uno de los Anexos que se han utilizado para el desarrollo del frontend, los cuales se encuentran detallados de la siguiente manera:
+P426 [Texto] ANEXO l. Resultado del programa antiplagio Turnitin.
+P427 [Texto] ANEXO ll. Información extra del componente frontend.
+P428 [Texto] ANEXO lll. Manual de usuario (video).
+P429 [Texto] ANEXO lV. Credenciales de acceso y despliegue. 
+P430 [] 
+P431 [] 
+P432 [] 
+P433 [] 
+P434 [] 
+P435 [] 
+P436 [] 
+P437 [] 
+P438 [] 
+P439 [] 
+P440 [] 
+P441 [] 
+P442 [] 
+P443 [] 
+P444 [] 
+P445 [] 
+P446 [] 
+P447 [] 
+P448 [] ANEXO I
+P449 [Titulos] ANEXO II
+P451 [] Recopilación de Requerimientos
+P452 [] Todos los requisitos que se han establecido previamente al desarrollo del proyecto se encuentran registrados en la Tabla 1.
+P453 [Descripcin] Tabla 1 Recopilación de requerimientos.
+TABLA 454
+RECOPILACIÓN DE REQUERIMIENTOS
+TIPO DE SISTEMA | ID - RR | ENUNCIADO DEL ÍTEM
+SISTEMA WEB | RR – 001 | En el sistema web se requiere que todos los roles puedan realizar lo siguiente: / Visualizar una landing page comercial.
+ | RR – 002 | En el sistema web se requiere que el administrador y cliente puedan realizar lo siguiente: / Registrarse.  / Iniciar sesión y cerrar sesión.  / Ver y modificar perfil.  / Recuperar clave. 
+ | RR – 003 | En el sistema web se requiere que el administrador pueda realizar lo siguiente: / Gestionar usuarios. / Gestionar los productos y el catálogo. / Gestionar solicitudes comerciales. / Gestionar quejas y/o sugerencias.
+ | RR-004 | En el sistema web se requiere que el cliente pueda realizar lo siguiente: / Visualizar productos mediante scrollytelling. / Visualizar productos y catálogo. / Visualizar recomendaciones y estimación de costos y productos. / Gestionar solicitudes comerciales. / Realizar consultas al asistente conversacional. / Gestionar quejas y/o sugerencias.
+P455 [Texto] 
+P456 [Texto] Historias de Usuario
+P457 [] Las historias de usuario se encuentran detalladas a continuación, las mismas que han sido creadas una vez que se ha finalizado la fase de levantamiento de requerimientos. De esta manera, se han realizado 12 historias de usuario, las cuales se detallan a continuación, desde la Tabla 2 hasta la Tabla 12 .
+P458 [Texto] Tabla 2 Historia de usuario – Visualizar landing page comercial.
+TABLA 459
+HISTORIA DE USUARIO
+Identificador: HU-001 | Usuario: Administrador y cliente
+Nombre de la historia: Como administrador o cliente, quiero visualizar una página de presentación de los productos, características e información del sistema, para conocer el el catálogo de Plastimad con el propósito de conocer a la plataforma antes de registrarme o iniciar sesión. 
+Prioridad en negocio: baja | Riesgo en desarrollo: baja
+Iteración asignada: 1
+Responsable (s): Dilan Obando 
+Descripción: El sistema web presenta una serie de secciones para todos los usuarios, las cuales contienen la siguiente información: / Sección principal. / Sección de formulario / Sección de quejas o sugerencias. / Sección de asistente virtual de Plastimad
+Observación: Todos los usuarios pueden tener un panorama claro sobre el proyecto.
+P460 [Texto] 
+P461 [] Tabla 3 Historia de usuario – Gestionar cuenta.
+TABLA 462
+HISTORIA DE USUARIO
+Identificador: HU-002 | Usuario: Administrador y cliente
+Nombre de la historia: Como administrador o cliente, quiero gestionar mi cuenta personal para mantener mis datos actualizados y acceder a las funcionalidades del sistema según mi perfil.
+Prioridad en negocio: alta  | Riesgo en desarrollo: alta
+Iteración asignada: 1
+Responsable (s): Dilan Obando
+Descripción: El sistema web permite que los usuarios con rol de administrador y estudiante puedan: / Registrarse. / Iniciar sesión y cerrar sesión.  / Ver y modificar perfil.  / Recuperar clave. 
+Observación: Se realiza la funcionalidad de cada componente, así como la validación de datos correspondientes antes de ser enviados al backend para su procesamiento y captura de la respuesta por medio de elementos visuales. No obstante, el registro se contempla únicamente para el cliente.
+P463 [Texto] 
+P464 [Descripcin] Tabla 4 Historia de usuario – Gestionar usuarios.
+TABLA 465
+HISTORIA DE USUARIO
+Identificador: HU-003 | Usuario: Administrador
+Título de la historia: Como administrador quiero gestionar los usuarios en la plataforma de Plastimad para mantener actualizado las solicitudes de cada cliente.
+Nivel de prioridad: Alto | Riesgo en desarrollo: Media
+Iteración asignada: 2
+Responsable (s): Dilan Obando
+Descripción: El sistema permite que el usuario con el rol administrador pueda hacer lo siguiente: / Registrar un nuevo pedido.  / Consultar el estado de cada cliente (Por confirmar, confirmado, finalizado y cancelado). / Actualizar el pedido de cada cliente en particular. / Eliminar un cliente en particular.
+Observación: Los administradores pueden gestionar cada uno de los clientes. Además, cada formulario posee una serie de validaciones para garantizar la integridad de la información en el sistema web. 
+P466 [] 
+P467 [Descripcin] Tabla 5 Historia de usuario – Gestionar los productos y el catalogo
+TABLA 468
+HISTORIA DE USUARIO
+Identificador: HU-004 | Usuario: Administrador
+Título de la historia: Como administrador, quiero gestionar los productos y el catálogo de PLASTIMAD para mantener actualizada la información disponible para los clientes.
+Nivel de prioridad: Alto | Riesgo en desarrollo: Media
+Iteración asignada: 2
+Responsable (s): Dilan Obando
+Descripción: El sistema permite que el usuario con el rol administrador pueda hacer lo siguiente: / Registrar productos con nombre, descripción, dimensiones, precio e imágenes. / Consultar y actualizar los productos del catálogo. / Activar o desactivar su publicación.
+Observación: Los formularios validan la información ingresada. Los cambios se reflejan en el catálogo sin alterar los datos de solicitudes anteriores.
+P469 [] 
+P470 [] 
+P471 [Descripcin] Tabla 6 Historia de usuario – Gestionar solicitudes comerciales 
+TABLA 472
+HISTORIA DE USUARIO
+Identificador: HU-005 | Usuario: Administrador
+Título de la historia: Como administrador, quiero gestionar las solicitudes comerciales para dar seguimiento a los requerimientos de cada cliente.
+Nivel de prioridad: Alto | Riesgo en desarrollo: Media
+Iteración asignada: 2
+Responsable (s): Dilan Obando
+Descripción: El sistema permite que el usuario con el rol administrador pueda hacer lo siguiente: / Consultar las solicitudes y sus detalles. / Revisar los productos, cantidades y datos del cliente. / Actualizar el estado: por confirmar, confirmado, finalizado o cancelado. / Registrar observaciones para el seguimiento comercial.
+Observación: Los cambios deben conservarse en el historial de la solicitud y permitir al cliente consultar su estado actualizado.
+P473 [] 
+P474 [Descripcin] Tabla 7 Historia de usuario – Gestionar quejas y/o sugerencias 
+TABLA 475
+HISTORIA DE USUARIO
+Identificador: HU-006 | Usuario: Administrador
+Título de la historia: Como administrador, quiero revisar y responder las quejas y sugerencias para atender las observaciones de los clientes.
+Nivel de prioridad: Alto | Riesgo en desarrollo: Media
+Iteración asignada: 2
+Responsable (s): Dilan Obando
+Descripción: El sistema permite que el usuario con el rol administrador pueda hacer lo siguiente: / Consultar las quejas y sugerencias recibidas. / Revisar el contenido y los datos del cliente. / Registrar una respuesta y actualizar el estado de atención. / 
+Observación: Las respuestas se vinculan con el mensaje correspondiente y quedan disponibles para el cliente que lo registró.
+P476 [Descripcin] Tabla 8 Historia de usuario – Visualizar productos mediante scrollytelling.
+TABLA 477
+HISTORIA DE USUARIO
+Identificador: HU-007 | Usuario: Cliente
+Título de la historia: Como cliente, quiero visualizar los maceteros mediante scrollytelling para conocer sus características de una forma interactiva.
+Nivel de prioridad: Alto | Riesgo en desarrollo: Alto
+Iteración asignada: 3
+Responsable (s): Dilan Obando
+Descripción: El sistema permite a cliente: / Observar un modelo tridimensional del macetero. / Visualizar cambios de posición y rotación al desplazarse por la página. / Conocer progresivamente sus materiales, dimensiones y el producto. / 
+Observación: La experiencia debe adaptarse a diferentes pantallas y mostrar una imagen del producto tridimensional.
+P478 [Texto] 
+P479 [Descripcin] Tabla 9 Historia de usuario – Visualizar productos y catálogo
+TABLA 480
+HISTORIA DE USUARIO
+Identificador: HU-008 | Usuario: Cliente
+Título de la historia: Como cliente, quiero consultar los productos y el catálogo para identificar los maceteros que se ajusten a mis necesidades.
+Nivel de prioridad: Alto | Riesgo en desarrollo: Bajo
+Iteración asignada: 3
+Responsable (s): Dilan Obando
+Descripción: El sistema permite a cliente: / Visualizar los productos publicados. / Consultar imágenes, descripción, dimensiones y precios referenciales. / Seleccionar un producto para solicitar asesoramiento o iniciar una solicitud comercial. / 
+Observación: La información presentada corresponde a los datos actualizados por el administrador.
+P481 [Texto] 
+P482 [Descripcin] Tabla 10 Historia de usuario – Visualizar recomendaciones, estimación de costos y productos 
+TABLA 483
+HISTORIA DE USUARIO
+Identificador: HU-009 | Usuario: Cliente
+Título de la historia: Como cliente, quiero obtener recomendaciones y una estimación de cantidad y costo para conocer cuántos maceteros podría utilizar en mi espacio.
+Nivel de prioridad: Alto | Riesgo en desarrollo: Alto
+Iteración asignada: 3
+Responsable (s): Dilan Obando
+Descripción: El sistema permite a cliente: / Cargar una imagen e ingresar el largo y ancho de su espacio. / Recibir recomendaciones apoyadas en el análisis de la imagen mediante inteligencia artificial. / Consultar la cantidad estimada de maceteros y su costo referencial. / Utilizar la estimación para generar una solicitud comercial. / 
+Observación: El cálculo utiliza las medidas ingresadas y los datos del producto. La estimación es orientativa y requiere confirmación comercial.
+P484 [Texto] 
+P485 [Descripcin] Tabla 11 Historia de usuario – Gestionar solicitudes comerciales 
+TABLA 486
+HISTORIA DE USUARIO
+Identificador: HU-010 | Usuario: Cliente
+Título de la historia: Como cliente, quiero registrar y consultar mis solicitudes comerciales para solicitar productos y conocer el avance de su atención.
+Nivel de prioridad: Alto | Riesgo en desarrollo: Medio
+Iteración asignada: 3
+Responsable (s): Dilan Obando
+Descripción: El sistema permite a cliente: / Registrar una solicitud con productos, cantidades y datos de contacto. / Incorporar la estimación obtenida, cuando corresponda. / Consultar el detalle y el estado de sus solicitudes. / 
+Observación: Cada cliente accede únicamente a sus solicitudes. El administrador es responsable de actualizar su estado.
+P487 [Texto] 
+P488 [Descripcin] Tabla 12 Historia de usuario – Realizar consultas al sistema conversacional
+TABLA 489
+HISTORIA DE USUARIO
+Identificador: HU-011 | Usuario: Cliente
+Título de la historia: Como cliente, quiero realizar consultas al asistente virtual de PLASTIMAD para resolver dudas sobre los productos y recibir orientación comercial.
+Nivel de prioridad: Alto | Riesgo en desarrollo: Alto
+Iteración asignada: 3
+Responsable (s): Dilan Obando
+Descripción: El sistema permite a cliente: / Escribir preguntas mediante una interfaz de conversación. / Consultar características, dimensiones, materiales y precios referenciales. / Recibir orientación para continuar con una solicitud comercial. / 
+Observación: Las respuestas deben basarse en información disponible de PLASTIMAD. Cuando esta sea insuficiente, el asistente indicará que se requiere atención del personal comercial.
+P490 [Texto] 
+P491 [Descripcin] Tabla 13 Historia de usuario – Gestionar quejas y/o sugerencias
+TABLA 492
+HISTORIA DE USUARIO
+Identificador: HU-012 | Usuario: Cliente
+Título de la historia: Como cliente, quiero registrar quejas o sugerencias para comunicar mi experiencia y recibir una respuesta de PLASTIMAD.
+Nivel de prioridad: Media | Riesgo en desarrollo: Bajo
+Iteración asignada: 3
+Responsable (s): Dilan Obando
+Descripción: El sistema permite a cliente: / Registrar una queja o sugerencia con asunto y descripción. / Consultar sus mensajes y el estado de atención. / Visualizar las respuestas del administrador. / 
+Observación: El formulario valida los campos obligatorios y cada cliente consulta únicamente los mensajes que ha registrado.
+P493 [] Product Backlog
+P494 [] Cada módulo tiene una prioridad, dependiendo del impacto de este dentro del componente; de esta manera, en la Tabla 14 se encuentra el ciclo según la prioridad.
+P495 [Descripcin] Tabla 14 Product Backlog.
+TABLA 496
+PRODUCT BACKLOG
+ID-HU | DESCRIPCIÓN DE LA HISTORIA | ITERACIÓN ASIGNADA | ESTADO | PRIORIDAD
+HU-001 | Visualizar landing page comercial | 1 | Finalizado | Baja
+HU-002 | Gestionar cuenta | 1 | Finalizado | Alta
+HU-003 | Gestionar usuarios | 2 | Finalizado | Alta 
+HU-004 | Gestionar los productos y el catalogo | 2 | Planificado | Alta 
+HU-005 | Gestionar solicitudes comerciales como administrador | 2 | Planificado | Alta
+HU-006 | Gestionar quejas y sugerencias como administrador  | 2 | Planificado | Media 
+HU-007 | Visualizar productos mediante scrollytelling  | 3 | Finalizado | Alta
+HU-008 | Visualizar productos y catalogo | 3 | Finalizado | Alta
+HU-009 | Visualizar recomendaciones y estimación de costos y productos | 3 | Planificado | Alta
+HU-010 | Gestionar solicitudes comerciales  como cliente | 3 | Planificado | Alta 
+HU-0011 | Realizar consultas al asistente conversacional | 3 | Planificado | Alta  
+HU-0012 | Gestionar quejas y sugerencias como cliente  | 3 |  | Media 
+P497 [] 
+P498 [] 
+P499 [] Sprint Backlog
+P500 [] Para el sistema web de PLASTIMAD se proponen cinco sprints, una etapa inicial de configuración y actividades transversales de documentación. Las doce historias de usuario se distribuyen en las primeras tres iteraciones, conforme al Product Backlog.Tabla 15 Sprint Backlog.
+TABLA 501
+ELABORACIÓN DEL SPRINT BACKLOG
+ID-SB | NOMBRE | MÓDULO | HU | HISTORIAS DE / USUARIO | TAREAS | TIEMPO / ESTIMADO
+SB-000 | Configuración del ambiente de desarrollo | N/A | N/A | N/A | Configurar las herramientas de desarrollo y el repositorio. Preparar React, TypeScript, Node.js y MySQL. Definir los modelos de datos y comprobar la conexión entre frontend, backend y base de datos. | 10 H
+ /  / SB-001 /  | Diseño e implementación de la landing page y gestión de cuentas |  /  / Módulo de usuario |  / HU001 |  / Visualizar una landing page comercial |  / Diseñar e implementar la sección principal, el formulario y los accesos a quejas, sugerencias y asistente virtual. / Comprobar la navegación y la adaptación a diferentes pantallas. | 20H / 
+ |  | Gestión de cuenta | HU002 | Gestionar cuenta | Implementar registro de clientes, inicio y cierre de sesión  / Integrar los servicios del backend / Validar los campos y comprobar permisos de cada rol | 40H
+SB-002 /  | Diseño e implementación del módulo para el usuario administrador | Administrador |  / HU003 | Gestionar usuarios | Desarrollar las interfaces para consultar y administrar clientes y sus pedidos asociados  / Impelementar el registro y la edición de productos  / Incorporar la activación y desactivación de su publicación / Desarrollar e implementar los estados confirmar, confirmado, finalizado y cancelado / Comprobar los permisos administrativos / Comprobar que cada respuesta quede vinculada con el mensaje y el cliente correspondiente | 40H
+ |  |  | HU004 | Gestionar los productos y el catalogo |  | 
+ |  |  | HU005 | Gestionar solicitudes comerciales  |  | 
+ |  |  | HU006 | Gestionar quejas y/o sugerencias  |  | 
+SB-003 /  | Diseño e implementación de las funcionalidades  | Cliente | HU007 | Visualizar productos mediante Scrollytelling | Diseño y desarrollo de las interfaces con el fin de que el usuario pueda ver los productos  / Visualizar el modelo tridimensional del macetero mediante tecnologías que nos permitan lograrlo. /  / Realizar pruebas para validar el módulo de quejas y sugerencias. / Consultar imágenes, descripciones, dimensiones y precios desde el backend / Mostrar el detalle, el estado y las observaciones comerciales.  /  | 20H
+ |  | Cliente /  | HU008 | Visualizar productos y catalogo |  | 
+ |  |  | HU009 | Visualizar recomendaciones y estimación de costos y productos.  |  | 
+ |  |  | HU010 | Gestionar solicitudes comerciales |  | 
+SB-004 /  | Pruebas integrales del sistema  | Administrador | HU003 | Gestionar usuarios | Comprobar la consulta y actualización de clientes y sus pedidos asociados. / Validar el registro, edición, activación y desactivación de productos del catálogo. / Verificar los cambios de estado de las solicitudes: por confirmar, confirmado, finalizado y cancelado. / Comprobar la consulta y respuesta de quejas y sugerencias. / Validar los formularios, los permisos administrativos y el almacenamiento de la información. / Corregir los errores encontrados y registrar las evidencias de las pruebas. | 40H
+ |  |  | HU004 | Gestionar los productos y el catalogo |  | 
+ |  |  | HU005 | Gestionar solicitudes comerciales |  | 
+ |  |  | HU006 | Gestionar quejas y/o sugerencias  |  | 
+ / SB-005 /  | Pruebas y despliegue del sistema web | Ejecutar las pruebas finales de compatibilidad y aceptación del sistema. / Comprobar el funcionamiento del catálogo, el scrollytelling, las recomendaciones y el asistente conversacional. / Verificar la integración entre las solicitudes del cliente y su atención por el administrador. / Configurar el alojamiento y las variables de entorno. / Desplegar el frontend, el backend y la base de datos MySQL. / Comprobar el acceso y las funcionalidades principales en producción. | 30H
+Documentación | Trabajo de Integración Curricular. / Anexos. | 40H
+TOTAL | 240H
+P502 [] 
+P503 [] 

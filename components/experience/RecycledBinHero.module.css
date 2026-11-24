@@ -1,0 +1,471 @@
+.hero {
+  position: relative;
+  height: 400svh;
+  background: #06120e;
+  color: #f5f4ed;
+  isolation: isolate;
+}
+.viewport {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  min-height: 540px;
+  overflow: hidden;
+  background: #06120e;
+}
+.background {
+  position: absolute;
+  left: -2%;
+  top: -50%;
+  width: 104%;
+  height: 160%;
+  will-change: transform;
+}
+.landscape {
+  object-fit: cover;
+  object-position: 50% 65%;
+}
+.blur {
+  position: absolute;
+  inset: 0;
+  filter: blur(6.7px);
+  opacity: 0;
+  mask-image: linear-gradient(35deg, transparent 5%, #000 78%);
+}
+.baseShade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    #03100bd9,
+    #06120e45 34%,
+    #06120e44 68%,
+    #06120ecc
+  );
+}
+.readingShade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    #06120ef2 0%,
+    #06120ed6 29%,
+    #06120e66 57%,
+    transparent 82%
+  );
+  opacity: 0;
+}
+.header {
+  position: absolute;
+  z-index: 5;
+  left: 6%;
+  right: 6%;
+  top: 0;
+  min-height: 108px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f5f4ed2b;
+}
+.brand {
+  font-size: 22px;
+  font-weight: 650;
+  letter-spacing: 0.07em;
+}
+.brand span {
+  display: block;
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  color: #c6d3b9;
+  margin-top: 4px;
+}
+.header nav {
+  display: flex;
+  gap: 32px;
+  font-size: 12px;
+}
+.header nav a {
+  padding: 10px 0;
+}
+.product {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 75%;
+  width: min(43vw, 62svh);
+  transform: translateX(-50%);
+  will-change: transform, top, left, width;
+  pointer-events: none;
+}
+.product img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 28px 30px #0005);
+}
+.copies {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+.copy {
+  position: absolute;
+  left: 7%;
+  top: 27%;
+  width: 43%;
+  max-width: 650px;
+  opacity: 0;
+  visibility: hidden;
+  will-change: transform, opacity;
+  pointer-events: auto;
+}
+.intro {
+  top: 22%;
+  left: 14%;
+  width: 72%;
+  max-width: none;
+  text-align: center;
+  opacity: 1;
+  visibility: visible;
+}
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.17em;
+  font-weight: 500;
+  color: #d6f29a;
+  margin: 0 0 28px;
+}
+.copy h1,
+.copy h2 {
+  font-size: clamp(44px, 5.7vw, 92px);
+  line-height: 1.02;
+  letter-spacing: -0.055em;
+  font-weight: 520;
+  margin: 0;
+}
+.copy em {
+  font-style: normal;
+  font-family: inherit;
+  color: #d6f29a;
+}
+.intro h1 {
+  font-size: clamp(48px, 6.8vw, 104px);
+}
+.description {
+  font-size: clamp(15px, 1.4vw, 21px);
+  line-height: 1.55;
+  color: #dde5db;
+  max-width: 470px;
+  margin: 26px 0 0;
+}
+.intro .description {
+  margin: 25px auto 0;
+  max-width: 660px;
+}
+.stat {
+  font-size: 19px;
+  margin: 25px 0 12px;
+  color: #dde5db;
+}
+.stat strong {
+  font-size: 25px;
+  color: #d6f29a;
+  font-weight: 500;
+}
+.source {
+  display: inline-block;
+  max-width: 400px;
+  font-size: 10px;
+  line-height: 1.6;
+  color: #acbeac;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.contact {
+  margin-top: 30px;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 50px;
+  background: #d6f29a;
+  border-radius: 28px;
+  color: #102019;
+  padding: 14px 25px;
+  font-size: 13px;
+}
+.contact:hover {
+  background: #e6ffb4;
+}
+.contact span {
+  font-size: 22px;
+}
+.scrollHint {
+  position: absolute;
+  z-index: 4;
+  top: 68%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  white-space: nowrap;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  color: #e4e9d9;
+}
+.scrollHint > span {
+  display: block;
+  width: 16px;
+  height: 27px;
+  border: 1px solid #d6f29a88;
+  border-radius: 10px;
+  position: relative;
+}
+.scrollHint > span::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 6px;
+  left: 6px;
+  top: 6px;
+  background: #d6f29a;
+  animation: scrollCue 1.8s ease-in-out infinite;
+}
+@keyframes scrollCue {
+  50% {
+    transform: translateY(7px);
+    opacity: 0.4;
+  }
+}
+.footer {
+  position: absolute;
+  z-index: 4;
+  bottom: 25px;
+  left: 6%;
+  right: 6%;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+.footer i {
+  font-style: normal;
+  opacity: 0.5;
+  margin-left: 7px;
+}
+.track {
+  position: absolute;
+  bottom: -12px;
+  width: 100%;
+  height: 1px;
+  background: #f5f4ed30;
+  overflow: hidden;
+}
+.track > div {
+  width: 100%;
+  height: 100%;
+  background: #d6f29a;
+  transform: scaleX(0);
+  transform-origin: left;
+  will-change: transform;
+}
+.staticProduct {
+  display: none;
+}
+.endAnchor {
+  position: absolute;
+  bottom: 0;
+}
+@media (max-width: 700px) {
+  .viewport {
+    min-height: 560px;
+  }
+  .background {
+    top: -38%;
+    height: 150%;
+    left: -12%;
+    width: 124%;
+  }
+  .landscape {
+    object-position: 50% 65%;
+  }
+  .header {
+    min-height: 78px;
+    left: 6%;
+    right: 6%;
+  }
+  .brand {
+    font-size: 16px;
+  }
+  .brand span {
+    font-size: 6px;
+    letter-spacing: 0.14em;
+  }
+  .header nav {
+    gap: 12px;
+    font-size: 10px;
+  }
+  .header nav a:last-child {
+    display: none;
+  }
+  .copy {
+    top: 16%;
+    left: 6%;
+    width: 88%;
+    max-width: none;
+  }
+  .intro {
+    top: 22%;
+    left: 6%;
+    width: 88%;
+  }
+  .eyebrow {
+    font-size: 8px;
+    margin-bottom: 15px;
+    letter-spacing: 0.12em;
+  }
+  .copy h1,
+  .copy h2 {
+    font-size: clamp(35px, 10vw, 48px);
+    letter-spacing: -0.045em;
+    line-height: 1.02;
+  }
+  .intro h1 {
+    font-size: clamp(37px, 10.5vw, 50px);
+  }
+  .description {
+    font-size: 13px;
+    line-height: 1.5;
+    margin-top: 15px;
+    max-width: 350px;
+  }
+  .intro .description {
+    font-size: 13px;
+    margin-top: 22px;
+  }
+  .problem .description {
+    max-width: 295px;
+  }
+  .stat {
+    font-size: 13px;
+    margin: 10px 0 5px;
+  }
+  .stat strong {
+    font-size: 17px;
+  }
+  .source {
+    font-size: 8px;
+    max-width: 330px;
+  }
+  .product {
+    width: 74vw;
+    top: 72%;
+  }
+  .readingShade {
+    background: linear-gradient(
+      180deg,
+      #06120ef2 0%,
+      #06120eef 33%,
+      #06120e66 54%,
+      transparent 75%
+    );
+  }
+  .scrollHint {
+    top: 58%;
+    font-size: 8px;
+  }
+  .footer {
+    bottom: 24px;
+    font-size: 9px;
+  }
+  .contact {
+    margin-top: 18px;
+    padding: 9px 18px;
+    min-height: 42px;
+    font-size: 11px;
+    gap: 20px;
+  }
+}
+@media (max-height: 690px) and (min-width: 701px) {
+  .header {
+    min-height: 80px;
+  }
+  .copy {
+    top: 24%;
+  }
+  .copy h1,
+  .copy h2 {
+    font-size: clamp(42px, 5vw, 66px);
+  }
+  .eyebrow {
+    margin-bottom: 18px;
+  }
+  .description {
+    margin-top: 18px;
+    font-size: 15px;
+  }
+  .stat {
+    margin-top: 15px;
+  }
+  .scrollHint {
+    top: 67%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero {
+    height: auto;
+  }
+  .viewport {
+    position: relative;
+    height: auto;
+    min-height: 100svh;
+  }
+  .background {
+    position: fixed;
+    top: -10%;
+    height: 120%;
+    transform: none !important;
+  }
+  .readingShade {
+    opacity: 1;
+  }
+  .product,
+  .scrollHint,
+  .footer {
+    display: none;
+  }
+  .copies {
+    position: relative;
+    padding-top: 100px;
+  }
+  .copy,
+  .intro {
+    position: relative;
+    left: auto;
+    top: auto;
+    max-width: 850px;
+    width: 88%;
+    min-height: 90svh;
+    margin: 0 auto;
+    padding: 7vh 0;
+    opacity: 1;
+    visibility: visible;
+    text-align: left;
+    transform: none;
+  }
+  .intro .description {
+    margin: 25px 0;
+  }
+  .staticProduct {
+    display: block;
+    width: min(52vw, 350px);
+    height: auto;
+    margin: 35px auto;
+  }
+  .contact {
+    width: fit-content;
+  }
+}

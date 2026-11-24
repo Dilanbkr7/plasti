@@ -6,21 +6,50 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "setup:local": "tsx scripts/setup.ts local",
+    "db:migrate": "tsx scripts/setup.ts migrate",
+    "admin:create": "tsx scripts/setup.ts admin",
+    "test": "tsx --test tests/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "db:check": "tsx scripts/setup.ts check"
   },
   "dependencies": {
+    "@electric-sql/pglite": "^0.5.8",
+    "@react-three/drei": "^10.7.8",
+    "@react-three/fiber": "^9.8.0",
+    "framer-motion": "^13.4.1",
+    "gsap": "^3.15.0",
+    "lenis": "^1.3.26",
     "next": "16.3.6",
+    "nodemailer": "^10.0.12",
+    "openai": "^7.23.0",
+    "pg": "^8.23.0",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "server-only": "^0.0.1",
+    "sharp": "^0.35.4",
+    "three": "^0.186.0",
+    "zod": "^4.6.5",
+    "zustand": "^5.0.15"
   },
   "devDependencies": {
+    "@gltf-transform/core": "^4.5.1",
+    "@gltf-transform/extensions": "^4.5.1",
+    "@gltf-transform/functions": "^4.5.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
+    "@types/nodemailer": "^8.0.2",
+    "@types/pg": "^8.23.1",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "draco3dgltf": "^1.5.9",
     "eslint": "^9",
     "eslint-config-next": "16.3.6",
+    "meshoptimizer": "^1.3.0",
+    "prettier": "^3.9.9",
     "tailwindcss": "^4",
+    "tsx": "^4.23.15",
     "typescript": "^5"
   }
 }
