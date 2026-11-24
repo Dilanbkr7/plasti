@@ -56,9 +56,8 @@ export function ImmersiveHero() {
   const [visible, setVisible] = useState(false);
   const [ready, setReady] = useState(false);
   const [reduced, setReduced] = useState(false);
-  const [paused, setPaused] = useState(false);
   const [supported, setSupported] = useState(false);
-  const goToChapter = useHeroSceneScroll(root, reduced || paused);
+  const goToChapter = useHeroSceneScroll(root, reduced);
   const sceneReady = useCallback(() => setReady(true), []);
   const sceneFailed = useCallback(() => {
     setReady(false);
@@ -101,39 +100,74 @@ export function ImmersiveHero() {
     const line = el.querySelector("[data-hero-progress]");
     let disposed = false;
     let release = () => {};
+    const instant = reduced;
     const context = gsap.context(() => {
+      // The scroll sets the target; a frame-rate independent ease draws the
+      // scene toward it, so a quick wheel step becomes a visible crossfade.
+      const target = { scroll: 0, chapter: 0 };
+      const shown = { scroll: 0, chapter: 0 };
+      let settled = false;
+      let current = -1;
+      const draw = () => {
+        const progress = shown.chapter;
+        const index = Math.round(progress);
+        scene.current.progress = instant ? index : progress;
+        if (index !== current) {
+          current = index;
+          setActive(index);
+        }
+        copies.forEach((copy, i) => {
+          const distance = i - progress;
+          const blur = Math.min(8, Math.abs(distance) * 7);
+          gsap.set(copy, {
+            autoAlpha: instant
+              ? Number(i === index)
+              : Math.max(0, 1 - Math.abs(distance) * 1.8),
+            y: instant ? 0 : distance * 65,
+            filter: instant || blur < 0.05 ? "none" : `blur(${blur}px)`,
+          });
+        });
+        gsap.set(line, { scaleX: shown.scroll });
+        gsap.set(landscape, {
+          scale: instant ? 1.08 : 1.08 + shown.scroll * 0.12,
+          yPercent: instant ? 0 : shown.scroll * -5,
+        });
+      };
       const sync = () => {
         if (disposed) return;
-        const scroll = heroScrollProgress(
+        target.scroll = heroScrollProgress(
           el.getBoundingClientRect().top,
           el.offsetHeight,
           stage.offsetHeight,
           heroStageInset(stage),
         );
-        const progress = chapterProgress(scroll);
-        const index = Math.round(progress);
-        scene.current.progress = reduced || paused ? index : progress;
-        setActive(index);
-        copies.forEach((copy, i) => {
-          const distance = i - progress;
-          gsap.set(copy, {
-            autoAlpha:
-              reduced || paused
-                ? Number(i === index)
-                : Math.max(0, 1 - Math.abs(distance) * 1.8),
-            y: reduced || paused ? 0 : distance * 65,
-            filter:
-              reduced || paused
-                ? "none"
-                : `blur(${Math.min(8, Math.abs(distance) * 7)}px)`,
-          });
-        });
-        gsap.set(line, { scaleX: scroll });
-        gsap.set(landscape, {
-          scale: reduced || paused ? 1.08 : 1.08 + scroll * 0.12,
-          yPercent: reduced || paused ? 0 : scroll * -5,
-        });
+        target.chapter = chapterProgress(target.scroll);
+        if (instant || !settled) {
+          settled = true;
+          Object.assign(shown, target);
+          draw();
+        }
       };
+      const ease = (_time: number, deltaMs: number) => {
+        if (disposed || instant) return;
+        const chapterGap = target.chapter - shown.chapter;
+        const scrollGap = target.scroll - shown.scroll;
+        if (chapterGap === 0 && scrollGap === 0) return;
+        if (Math.abs(chapterGap) < 0.001 && Math.abs(scrollGap) < 0.001)
+          Object.assign(shown, target);
+        else {
+          const step =
+            1 -
+            Math.exp(
+              (-heroSettings.transitionResponse * Math.min(deltaMs, 64)) /
+                1000,
+            );
+          shown.chapter += chapterGap * step;
+          shown.scroll += scrollGap * step;
+        }
+        draw();
+      };
+      gsap.ticker.add(ease);
       const trigger = ScrollTrigger.create({
         trigger: el,
         start: () => `top ${heroStageInset(stage)}px`,
@@ -143,7 +177,7 @@ export function ImmersiveHero() {
         snap: {
           snapTo: [...heroSettings.sceneStops, 1],
           delay: 0.08,
-          duration: reduced || paused ? 0 : 0.1,
+          duration: reduced ? 0 : 0.1,
           inertia: false,
         },
       });
@@ -166,6 +200,7 @@ export function ImmersiveHero() {
       void document.fonts.ready.then(refresh);
       sync();
       release = () => {
+        gsap.ticker.remove(ease);
         cancelAnimationFrame(frame);
         window.removeEventListener("scroll", sync);
         window.removeEventListener("resize", refresh);
@@ -180,7 +215,7 @@ export function ImmersiveHero() {
       release();
       context.revert();
     };
-  }, [reduced, paused]);
+  }, [reduced]);
 
   return (
     <MotionConfig reducedMotion="user">
@@ -200,7 +235,7 @@ export function ImmersiveHero() {
           className={s.stage}
           data-hero-stage
           onPointerMove={(event) => {
-            if (reduced || paused || event.pointerType !== "mouse") return;
+            if (reduced || event.pointerType !== "mouse") return;
             const rect = event.currentTarget.getBoundingClientRect();
             scene.current.pointerX =
               ((event.clientX - rect.left) / rect.width - 0.5) * 2;
@@ -228,9 +263,9 @@ export function ImmersiveHero() {
               {...heroSettings.sideRays}
               origin="top-right"
               speed={
-                paused || reduced || !visible ? 0 : heroSettings.sideRays.speed
+                reduced || !visible ? 0 : heroSettings.sideRays.speed
               }
-              followMouse={!paused && !reduced}
+              followMouse={!reduced}
               mouseInfluence={0.12}
               falloff={1.4}
               glow={0.65}
@@ -277,7 +312,6 @@ export function ImmersiveHero() {
                     scene={scene}
                     active={visible}
                     chapter={active}
-                    paused={paused}
                     onReady={sceneReady}
                     onFailure={sceneFailed}
                   />
@@ -311,7 +345,7 @@ export function ImmersiveHero() {
                           key={word}
                           className={s.interactiveWord}
                           whileHover={
-                            paused || reduced
+                            reduced
                               ? undefined
                               : {
                                   y: -7,
@@ -325,7 +359,7 @@ export function ImmersiveHero() {
                             damping: 26,
                           }}
                           onHoverStart={() => {
-                            if (!paused && !reduced) scene.current.energy = 1;
+                            if (!reduced) scene.current.energy = 1;
                           }}
                           onHoverEnd={() => {
                             scene.current.energy = 0;
@@ -366,14 +400,6 @@ export function ImmersiveHero() {
                 </button>
               ))}
             </nav>
-            <button
-              className={s.pause}
-              onClick={() => setPaused(!paused)}
-              aria-pressed={paused}
-            >
-              {paused ? "Activar efectos" : "Pausar efectos"}{" "}
-              <span>{paused ? "▷" : "Ⅱ"}</span>
-            </button>
           </div>
           <div className={s.progress}>
             <span data-hero-progress />
