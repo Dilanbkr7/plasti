@@ -7,6 +7,7 @@ export const heroSettings = {
   scrollScrub: true as boolean | number, // true = inmediato; 0.15 = suavizado de 150 ms.
   sceneStops: [0, 0.48, 0.9] as readonly number[],
   sceneStepDuration: 0.14,
+  transitionResponse: 7, // Suavizado de textos, maceta y fondo: mayor = más rápido (7 ≈ 0,4 s).
   wheelGestureGap: 100, // Una ráfaga de eventos de trackpad cuenta como un gesto.
   orbIntensity: 0.48,
   cameraTravel: 0.28,

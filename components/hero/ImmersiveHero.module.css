@@ -1,6 +1,13 @@
+/* Registrado para que el color de acento cambie con un fundido entre escenas. */
+@property --accent {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #c1ad7b;
+}
 .hero {
   --hero-stage-height: calc(100svh - var(--shop-header-height, 0px));
   position: relative;
+  transition: --accent 0.45s ease;
   height: calc(var(--hero-height, 360svh) - var(--shop-header-height, 0px));
   background: #000;
   color: #f3f1e7;
@@ -384,6 +391,7 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
+  .hero,
   .hero *,
   .hero *::before,
   .hero *::after {
