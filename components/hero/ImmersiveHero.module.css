@@ -207,9 +207,10 @@
   bottom: 32px;
   left: 5.5%;
   right: 5.5%;
-  display: flex;
+  /* Tres columnas: la guía de scroll a la izquierda y las escenas centradas. */
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   gap: 20px;
   z-index: 6;
 }
@@ -225,6 +226,7 @@
   font-size: 23px;
 }
 .chapters {
+  grid-column: 2;
   display: flex;
   gap: 22px;
 }
@@ -247,17 +249,6 @@
 .chapters button > span:first-child {
   font-size: 9px;
   opacity: 0.7;
-}
-.pause {
-  background: #10201660;
-  border: 1px solid #b1c29b40 !important;
-  padding: 10px 12px;
-  border-radius: 30px;
-  font-size: 9px !important;
-  color: #c6cfbb;
-}
-.pause span {
-  padding-left: 8px;
 }
 .progress {
   position: absolute;
@@ -367,6 +358,7 @@
   }
   .bottomline {
     bottom: 19px;
+    display: flex;
     gap: 10px;
     align-items: flex-end;
   }
@@ -384,10 +376,6 @@
   }
   .chapters button > span:first-child {
     font-size: 8px;
-  }
-  .pause {
-    font-size: 8px !important;
-    padding: 9px;
   }
 }
 @media (prefers-reduced-motion: reduce) {

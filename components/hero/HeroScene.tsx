@@ -32,17 +32,15 @@ type Props = {
   scene: RefObject<HeroMotion>;
   active: boolean;
   chapter: number;
-  paused: boolean;
   onReady: () => void;
   onFailure: () => void;
 };
 
 function PlanterLayers({
   scene,
-  paused,
   onReady,
   chapter,
-}: Pick<Props, "scene" | "paused" | "onReady" | "chapter">) {
+}: Pick<Props, "scene" | "onReady" | "chapter">) {
   const textures = useTexture(heroChapters.map((chapter) => chapter.image));
   const uniforms = useMemo(
     () =>
@@ -77,9 +75,9 @@ function PlanterLayers({
     const delta = Math.min(dt, 0.05);
     const state = scene.current;
     const p = state.progress;
-    const px = paused ? 0 : state.pointerX;
-    const py = paused ? 0 : state.pointerY;
-    if (!paused) time.current += delta;
+    const px = state.pointerX;
+    const py = state.pointerY;
+    time.current += delta;
     const transition = Math.sin(p * Math.PI);
     camera.position.x = MathUtils.damp(
       camera.position.x,
@@ -98,7 +96,7 @@ function PlanterLayers({
     if (group.current) {
       group.current.position.set(
         x,
-        y + (paused ? 0 : Math.sin(time.current * 0.9) * 0.035),
+        y + Math.sin(time.current * 0.9) * 0.035,
         0,
       );
       group.current.rotation.y = MathUtils.damp(
@@ -174,7 +172,6 @@ export default function HeroScene({
   scene,
   active,
   chapter,
-  paused,
   onReady,
   onFailure,
 }: Props) {
@@ -190,7 +187,6 @@ export default function HeroScene({
       <Suspense fallback={null}>
         <PlanterLayers
           scene={scene}
-          paused={paused}
           onReady={onReady}
           chapter={chapter}
         />
