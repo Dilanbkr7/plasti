@@ -3,9 +3,8 @@
 ## Fondo del estudio
 
 - Archivo utilizado: `public/images/black-timber-studio.webp`.
-- Original: `public/images/black-timber-studio.png`.
 - Creación: herramienta integrada ImageGen, sin CLI ni API key.
-- WebP optimizado con Sharp; el original se conserva para futuras versiones.
+- WebP optimizado con Sharp; el PNG original se retiró del repositorio porque la web no lo usa.
 
 Prompt final:
 
